@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 class Category(models.Model):
@@ -27,5 +28,5 @@ class Listing(models.Model):
     price = models.IntegerField()
     description = models.TextField()
     condition = models.CharField(max_length=200, unique=True)
-   #add listing images here 
+   #add listing images here ref Cloudinary lesson
 
