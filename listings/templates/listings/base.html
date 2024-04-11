@@ -13,7 +13,7 @@
     integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.css" rel="stylesheet" />
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="../../../static/css/style.css" type="text/css">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
 </head>
 
 <body>
@@ -26,7 +26,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'myaccount' %}">My Account</a>
+          <a class="nav-link" href="{}">My Account</a>
         </li>
       </ul>
     </div>
@@ -35,7 +35,6 @@
   {% block content %}
   {% endblock %}
 
-  <!-- Remove the container if you want to extend the Footer to full width. -->
   <footer class="bg-dark text-center text-white fixed-bottom">
     <!-- Grid container -->
     <div class="container p-4 pb-0">
@@ -55,7 +54,6 @@
       </section>
       <!-- Section: Social media -->
     </div>
-    <!-- Grid container -->
 
     <!-- Copyright -->
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
