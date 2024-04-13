@@ -144,6 +144,13 @@ MEDIA_URL = "/images/"
 MEDIA_ROOT = os.path.join(BASE_DIR, '/static/images/')
 DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 
+# Cloudinary Storage Configuration
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dkwkbn527',
+    'API_KEY': '448642266417968',
+    'API_SECRET': 'dXQcMQzaUnqZNORaSLTLcqw6sqE'
+}
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
