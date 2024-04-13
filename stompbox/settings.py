@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary_storage',
     'cloudinary',
+    'home_page',
     'listings',
 ]
 
@@ -62,7 +63,7 @@ ROOT_URLCONF = 'stompbox.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'listings/templates/listings')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -136,7 +137,7 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 STATICFILES_STORAGE = "cloudinary_storage.storage.StaticHashedCloudinaryStorage"
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "/static/")] # development
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")] # development
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles") # production
 CLOUDINARY_URL = os.environ.get("CLOUDINARY_URL")   
 MEDIA_URL = "/images/"
