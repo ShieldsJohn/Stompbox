@@ -1,12 +1,14 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block content %}
+
 <!--Header-->
 <h1>Hello!</h1>
 <!-- Hero -->
 <div class="bg-image position-relative">
-    <img href="{% static 'images/pedals_landing.jpg' %}" alt="A selection of pedals" class="w-100" />
-    <div class="mask position-absolute top-0 start-0 w-100" style="background-color: rgba(0, 0, 0, .6);"></div>
+    <img src="{% static 'images/pedals_landing.jpg' %}" alt="A selection of pedals" class="w-100" />
+    <div class="mask position-absolute top-0 start-0 w-100" style="background-color: rgba(0, 0, 0, .5);"></div>
 </div>
 
-<!-- Hero -->
+{% endblock %}

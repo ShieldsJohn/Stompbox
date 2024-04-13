@@ -8,5 +8,5 @@ def base(request):
 def home(request):
     return render(request, "listings/home.html")
 
-# def myaccount(request):
-#    return render(request, "listings/myaccount.html")
+def myaccount(request):
+    return render(request, "listings/myaccount.html")

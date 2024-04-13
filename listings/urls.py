@@ -1,9 +1,8 @@
 from django.urls import path
-from . import views
+from listings import views
 
 
 urlpatterns = [
-    path('', views.base, name='base'),
     path('', views.home, name='home'),
-    # path('', myaccount, name='myaccount'),
+    path('myaccount', views.myaccount, name='myaccount'),
 ]
