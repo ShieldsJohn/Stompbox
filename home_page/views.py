@@ -1,5 +1,19 @@
 from django.shortcuts import render
 from django.views import generic
+from django.shortcuts import redirect
 
 def home(request):
     return render(request, "home_page/home.html")
+
+def socials(request, platform):
+    platform_urls = {
+        'facebook': 'https://facebook.com', 
+        'twitter': 'https://twitter.com',
+        'instagram': 'https://www.instagram.com',
+        'youtube': 'https://www.youtube.com',
+    }
+    # use the platform parameter to redirect to relevant URL
+    if platform in platform_urls:
+        return redirect(platform_urls[platform])
+    else:
+        return redirect('home')

@@ -25,6 +25,8 @@ urlpatterns = [
     path('', include('listings.urls')),
     path('admin/', admin.site.urls),
     path("accounts/", include("allauth.urls")),
+    path('home_page/<str:platform>', views.socials, name='socials'),
+
 ]
 
 

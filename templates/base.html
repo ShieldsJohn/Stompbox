@@ -67,26 +67,26 @@
 
   <footer class="bg-dark text-center text-white fixed-bottom">
     <!-- Grid container -->
-    <div class="container p-4 pb-0">
+    <div class="container p-3 pb-0">
       <!-- Section: Social media -->
-      <section class="mb-4">
+      <section class="mb-3">
         <!-- Facebook -->
-        <a class="btn btn-outline-light btn-floating m-1" href="www.facebook.com" role="button"><i class="fab fa-facebook-f"></i></a>
+        <a class="btn btn-outline-light btn-floating m-1" href="{% url 'socials' 'facebook' %}" role="button" target="_blank"><i class="fab fa-facebook-f"></i></a>
 
         <!-- X -->
-        <a class="btn btn-outline-light btn-floating m-1" href="www.x.com" role="button"><i class="fab fa-twitter"></i></a>
+        <a class="btn btn-outline-light btn-floating m-1" href="{% url 'socials' 'twitter' %}" role="button" target="_blank"><i class="fab fa-x-twitter"></i></a>
 
         <!-- Instagram -->
-        <a class="btn btn-outline-light btn-floating m-1" href="www.instagram.com" role="button"><i class="fab fa-instagram"></i></a>
+        <a class="btn btn-outline-light btn-floating m-1" href="{% url 'socials' 'instagram' %}" role="button" target="_blank"><i class="fab fa-instagram"></i></a>
 
         <!-- YouTube -->
-        <a class="btn btn-outline-light btn-floating m-1" href="www.youtube.com" role="button"><i class="fab fa-youtube"></i></a>
+        <a class="btn btn-outline-light btn-floating m-1" href="{% url 'socials' 'youtube' %}" role="button" target="_blank"><i class="fab fa-youtube"></i></a>
       </section>
       <!-- Section: Social media -->
     </div>
 
     <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    <div class="text-center p-2" style="background-color: rgba(0, 0, 0, 0.2);">
       This website is for educational purposes only
     </div>
     <!-- Copyright -->
