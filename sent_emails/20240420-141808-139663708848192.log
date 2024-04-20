@@ -1,0 +1,21 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: [example.com] Password Reset Email
+From: Stompbox <noreply.yourstompbox.app@gmail.com>
+To: shields101@hotmail.com
+Date: Sat, 20 Apr 2024 14:18:08 -0000
+Message-ID: <171362268810.8603.13916749746760483995@localhost>
+
+Hello from example.com!
+
+You're receiving this email because you or someone else has requested a password reset for your user account.
+It can be safely ignored if you did not request a password reset. Click the link below to reset your password.
+
+http://8000-shieldsjohn-stompbox-hc42ee3uqm8.ws-eu110.gitpod.io/accounts/password/reset/key/1-c5sd28-01e088bbeacc7dff814c2af2b99e4d56/
+
+In case you forgot, your username is Shields.
+
+Thank you for using example.com!
+example.com
+-------------------------------------------------------------------------------
