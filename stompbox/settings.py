@@ -136,7 +136,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'yourstompbox.app@gmail.com'
-EMAIL_HOST_PASSWORD = 'conzldhjkvthryfv'
+EMAIL_HOST_PASSWORD = ''
 DEFAULT_FROM_EMAIL = 'Stompbox <noreply.yourstompbox.app@gmail.com>'
 
 # Internationalization
