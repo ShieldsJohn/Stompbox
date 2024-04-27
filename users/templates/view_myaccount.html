@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% url 'profile_form' as profile_form_url %}
 {& load static &}
 
 
@@ -14,6 +15,11 @@
 <p>Country: {{ user.country }}</p>
 <p>Email: {{ user.email }}</p>
 
+
+<p>
+  <a href="{% url 'profile_form' %}">Update MyAccount</a>
+</p>
+    
 
 
 {% endblock %}
