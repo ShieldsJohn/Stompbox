@@ -1,9 +1,26 @@
 {% extends 'base.html' %}
-{& load static &}
-
+{% url 'view_myaccount' as view_myaccount_url %}
+{% load static %}
 
 {% block content %}
 
+<div class="container">
+    <div class="row">
+      <div class="col-md-8 mt-3 offset-md-2">
+
 <h1>MyStompbox</h1>
+
+<p>
+<a href="{% url 'view_myaccount' %}">My Information</a>
+<p>
+
+</p>
+<!--<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+  </form>
+</p>
+-->
 
 {% endblock %}

@@ -5,3 +5,6 @@ from django.views import generic
 @login_required
 def myaccount(request):
     return render(request, "myaccount.html")
+
+def view_myaccount(request):
+    return render(request, "view_myaccount.html")
