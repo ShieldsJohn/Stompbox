@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+import uuid
 
 # Create your models here.
 class Category(models.Model):
@@ -46,5 +47,6 @@ class Listing(models.Model):
         ordering = ["-listing_date"]
     def __str__(self):
         return f"{self.title}"
+
 
 
