@@ -22,10 +22,10 @@ from home_page import views
 
 
 urlpatterns = [
-    path('', include('home_page.urls')),
-    path('', include('users.urls')),
+    path('home/', include('home_page.urls')),
+    path('users/', include('users.urls')),
     path('admin/', admin.site.urls),
-    path("accounts/", include("allauth.urls")),
+    path('accounts/', include('allauth.urls')),
     path('home_page/<str:platform>', views.socials, name='socials'),
 
 ]

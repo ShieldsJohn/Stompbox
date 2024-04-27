@@ -4,4 +4,4 @@ from django.views import generic
 
 @login_required
 def myaccount(request):
-    return render(request, "users/myaccount.html")
+    return render(request, "myaccount.html")
