@@ -47,7 +47,7 @@ def view_myaccount(request):
         form = UserForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('myaccount')
+            return redirect('myaccount') # redirect to myaccount when form saved
     else:
         try:
             profile = Profile.objects.get(email=request.user.email)
