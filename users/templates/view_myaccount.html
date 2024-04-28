@@ -9,12 +9,11 @@
     <div class="row">
       <div class="col-md-8 mt-3 offset-md-2">
 
-<p>Name: {{ user.first_name }}</p>
-<p>Surname: {{ user.surname }}</p>
-<p>City: {{ user.city }}</p>
-<p>Country: {{ user.country }}</p>
-<p>Email: {{ user.email }}</p>
-
+<p>Name: {{ profile.first_name }}</p>
+<p>Surname: {{ profile.surname }}</p>
+<p>City: {{ profile.city }}</p>
+<p>Country: {{ profile.country }}</p>
+<p>Email: {{ profile.email }}</p>
 
 <p>
   <a href="{% url 'profile_form' %}">Update MyAccount</a>
