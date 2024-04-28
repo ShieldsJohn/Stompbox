@@ -14,5 +14,5 @@ class Profile(models.Model):
     # profile_img = models.ImageField(upload_to='users/', blank=True, null=True)
     created = models.DateTimeField(auto_now_add=True)
 
-    def get_full_name(self):
-        return f"{self.first_name} {self.surname}"
+    def __str__(self):
+        return f"{self.first_name}, {self.surname}"
