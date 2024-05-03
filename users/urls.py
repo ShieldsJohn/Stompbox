@@ -8,4 +8,7 @@ urlpatterns = [
     path('view_myaccount/', views.view_myaccount, name='view_myaccount'),
     path('profile_form/', views.profile_form, name='profile_form'),
     path('profile_form_success/', views.profile_form_success, name='profile_form_success'),
+    path('delete_account_confirmation/', views.delete_account_confirmation, name='delete_account_confirmation'),
+    path('account_deleted/', views.account_deleted, name='account_deleted'),
+
 ]

@@ -1,9 +1,10 @@
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views import generic
 from django.contrib.auth.models import User
 from .forms import UserForm
 from .models import Profile
+from django.contrib.auth import get_user_model, logout
 
 # Render myaccount page if logged in
 @login_required
@@ -63,3 +64,18 @@ def view_myaccount(request):
 def profile_form_success(request):
     user = request.user
     return render(request, 'profile_form_success.html', {'user': user})
+
+# Delete user account and data
+def delete_account_confirmation(request):
+    if request.method == 'POST':
+        if 'confirm_delete' in request.POST:
+            if request.POST['confirm_delete'] == 'Yes':
+                user = request.user
+                user.delete()
+                logout(request)
+                return redirect('account_deleted')
+        return redirect('myaccount')  
+    return render(request, 'delete_account_confirmation.html')
+
+def account_deleted(request):
+    return render(request, 'account_deleted.html')
