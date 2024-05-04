@@ -65,16 +65,20 @@ def profile_form_success(request):
     user = request.user
     return render(request, 'profile_form_success.html', {'user': user})
 
-# Delete user account and data
+# Delete user and account/profile
+@login_required
 def delete_account_confirmation(request):
     if request.method == 'POST':
-        if 'confirm_delete' in request.POST:
-            if request.POST['confirm_delete'] == 'Yes':
-                user = request.user
-                user.delete()
-                logout(request)
-                return redirect('account_deleted')
-        return redirect('myaccount')  
+        user = request.user
+        try:
+            profile = Profile.objects.get(email=user.email)
+            profile.delete()
+        except Profile.DoesNotExist:
+            pass  # If profile doesn't exist or deleted
+        
+        user.delete()
+        logout(request)
+        return render(request, 'account_deleted.html')
     return render(request, 'delete_account_confirmation.html')
 
 def account_deleted(request):
