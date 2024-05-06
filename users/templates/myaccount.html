@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% url 'view_myaccount' as view_myaccount_url %}
+{% url 'my_listings' as my_listings_url %}
 {% url 'delete_account_confirmation' as delete_account_url %}
 {% load static %}
 
@@ -15,6 +16,10 @@
 <a href="{% url 'view_myaccount' %}">MyAccount</a>
 </p>
 
+<p>
+  <a href="{% url 'my_listings' %}">MyListings</a>
+</p>
+  
 <p>
   <a href="{% url 'delete_account_confirmation' %}">Delete MyStompbox</a>
 </p>

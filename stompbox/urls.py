@@ -18,15 +18,17 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic import RedirectView
-from home_page import views
+from home_page import views as home_views
+from listings import views as listings_views
 
 
 urlpatterns = [
     path('', include('home_page.urls')),
     path('users/', include('users.urls')),
+    path('listings/', include('listings.urls')),
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
-    path('home_page/<str:platform>', views.socials, name='socials'),
+    path('home_page/<str:platform>', home_views.socials, name='socials'),
 
 ]
 

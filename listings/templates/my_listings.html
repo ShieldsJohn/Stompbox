@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% url 'create_listing' as create_listing_url %}
+{% url 'listing_detail' as listing_detail_url %}
+{% url 'update_listing' as update_listing_url %}
+{% url 'delete_listing' as delete_listing_url %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mt-3 offset-md-2">
+            <h1>MyListings</h1>
+
+            {% if listings %}
+                {% for listing in listings %}
+                    <p>
+                        <a href="{% url 'listing_detail' pk=listing.pk %}">View Details</a>
+                        <a href="{% url 'update_listing' pk=listing.pk %}">Update Listing</a>
+                        <a href="{% url 'delete_listing' pk=listing.pk %}">Delete Listing</a>
+                    </p>
+                {% endfor %}
+            {% else %}
+                <p>No listings yet - <a href="{% url 'create_listing' %}">create your first listing here</a>!</p>
+            {% endif %}
+
+            {% if listings %}
+                <p><a href="{% url 'create_listing' %}">Create Listing</a></p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
