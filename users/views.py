@@ -14,7 +14,7 @@ def myaccount(request):
 
 @login_required
 def profile_form(request):
-    user = request.user
+    user = request.user.profile
     try:
         profile = Profile.objects.get(email=user.email)
     except Profile.DoesNotExist:
