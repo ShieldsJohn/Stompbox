@@ -48,10 +48,14 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'cloudinary_storage',
     'cloudinary',
+    'djmoney',
     'home_page',
     'listings',
     'users',
 ]
+
+DEFAULT_CURRENCY = 'GBP'
+USE_THOUSAND_SEPARATOR = True
 
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'

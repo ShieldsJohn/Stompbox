@@ -12,8 +12,15 @@
 <p>Are you sure you want to delete MyStompbox and all held data?</p>
     <form method="post">
         {% csrf_token %}
-        <button type="submit" name="confirm_delete" value="Yes">Yes, unfortunately so...</button>
-        <button type="submit" name="confirm_delete" value="No">No!  What am I doing?!</button>
+        <input type="hidden" name="confirm_delete" value="Yes">
+        <button type="submit">Yes, unfortunately so...</button>
     </form>
+    <p>
+    <form method="post">
+        {% csrf_token %}
+        <input type="hidden" name="confirm_delete" value="No">
+        <button type="submit">No! What am I doing?!</button>
+    </form>
+    </p>
 
 {% endblock %}
