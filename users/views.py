@@ -14,9 +14,10 @@ def myaccount(request):
 
 @login_required
 def profile_form(request):
-    user = request.user.profile
+    user = request.user
     try:
         profile = Profile.objects.get(email=user.email)
+
     except Profile.DoesNotExist:
         profile = None
     
@@ -28,6 +29,7 @@ def profile_form(request):
             return HttpResponseForbidden("You are not authorised to update this profile.")
         
         form = UserForm(request.POST, instance=profile)
+        
         if form.is_valid():
             form.save()
             return redirect('profile_form_success')
