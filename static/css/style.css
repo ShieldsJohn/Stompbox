@@ -11,6 +11,10 @@ body {
     background-color: darkgrey;
 }
 
+.navbar {
+    box-shadow: 0 4px 6px rgba(60, 232, 177, 0.5);
+}
+
 .overlay-title {
     position: absolute;
     top: 50%; 
@@ -20,6 +24,7 @@ body {
     padding: 10px 10px; 
     font-size: 7.5vw; 
     text-align: center;
+    text-shadow: 0 0 40px rgba(60, 232, 177, 0.5);
 }
 
 .overlay-tagline {
@@ -31,4 +36,8 @@ body {
     padding: 10px 10px; 
     font-size: 5vw; 
     text-align: center;
+}
+
+.btn-social {
+    color: rgba(60, 232, 177, 0.5);
 }
