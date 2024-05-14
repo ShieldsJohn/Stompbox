@@ -15,6 +15,13 @@
 
             {% if listings %}
                 {% for listing in listings %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-{{ message.tags }}" role="alert">
+                                {{ message }}
+                            </div>
+                    {% endfor %}
+                    {% endif %}  
                     <p>
                         <a href="{% url 'listing_detail' pk=listing.pk %}">View Details</a>
                         <a href="{% url 'update_listing' pk=listing.pk %}">Update Listing</a>

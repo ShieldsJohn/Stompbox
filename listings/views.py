@@ -30,44 +30,32 @@ def my_listings(request):
 # Render create listing page if logged-in
 @login_required
 def create_listing(request):
-    profile = None 
+    try:
+        profile = request.user.profile
+    except Profile.DoesNotExist:
+        print("Profile does not exist for user:", request.user.username)
+        messages.error(request, "Please create your profile before creating a listing.")
+        return redirect('profile_form')
+
     if request.method == 'POST':
         form = ListingForm(request.POST, request.FILES)
         if form.is_valid():
             form.instance.price_currency = 'GBP'
+            form.instance.profile = profile  # Associate the listing with the user's profile
 
-            # Check if profile exists for logged-in user
             try:
-                profile = request.user.profile
-
-                # Update existing profile data
-                profile.first_name = request.user.first_name
-                profile.surname = request.user.last_name
-                profile.email = request.user.email
-                profile.save()
-                print("Profile created successfully:", profile) 
-            except Profile.DoesNotExist:
-                # If the profile doesn't exist, handle the error
-                profile = None
-                # Redirect to a page where the user can create their profile
-                messages.error(request, "Please create your profile before creating a listing.")
-                return redirect('profile_form')
-            except Exception as e:
-                print("Error creating/updating profile:", e)
-            listing = form.save(commit=False)
-            listing.profile = profile
-            try:
-                listing.save()
-                print("Listing saved successfully:", listing) 
+                form.save()  # Save the listing
+                messages.success(request, 'Listing created successfully!')
+                return redirect('my_listings')
             except Exception as e:
                 print("Error saving listing:", e)
-            messages.success(request, 'Listing created successfully!')
-            return redirect('my_listings')
+                messages.error(request, 'Failed to create listing.')
         else:
             print(form.errors)
     else:
         initial_currency = {'price_currency': 'GBP'}
         form = ListingForm(initial=initial_currency)
+
     return render(request, 'create_listing.html', {'form': form})
 
 # Render listing detail page if logged in
