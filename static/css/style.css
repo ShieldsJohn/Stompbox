@@ -10,3 +10,25 @@ body {
 .navbar-toggler {
     background-color: darkgrey;
 }
+
+.overlay-title {
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -75%); 
+    color: whitesmoke; 
+    padding: 10px 10px; 
+    font-size: 7.5vw; 
+    text-align: center;
+}
+
+.overlay-tagline {
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -5%); 
+    color: whitesmoke; 
+    padding: 10px 10px; 
+    font-size: 5vw; 
+    text-align: center;
+}
