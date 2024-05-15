@@ -22,7 +22,7 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark">
     <a class="navbar-brand" href="{% url 'home' %}">Stompbox</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,11 +52,11 @@
     </div>
   </nav>
 
-  <main class="flex-shrink-0 main-bg">
+  <main class="flex-shrink-0 main-bg bg-dark">
     {% if user.is_authenticated %}
-    <p class="text-end fs-6 fst-italic text-muted fw-light mr-4 ml-4 mt-2 mb-2"><i>You are logged in as {{ user.username }}</i></p>
+    <p class="text-end fs-6 fst-italic text-muted fw-light mr-4 ml-4 mt-1 mb-2 pt-1" id="logged-in"><i>You are logged in as {{ user.username }}</i></p>
     {% else %}
-    <p class="text-end fs-6 fst-italic text-muted fw-light mr-4 ml-4 mt-2 mb-2">You are not logged in</p>
+    <p class="not-logged-in text-end fs-6 fst-italic text-muted fw-light mr-4 ml-4 mt-1 mb-2 pt-1" id="not-logged-in">You are not logged in</p>
     {% endif %}
 
     {% block content %}

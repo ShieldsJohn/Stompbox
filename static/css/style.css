@@ -3,6 +3,22 @@ body {
     padding-bottom: 150px;
 }
 
+.navbar-brand {
+    color: whitesmoke !important;
+}
+
+.navbar-brand:hover {
+    color: rgba(60, 232, 177, 1) !important;
+}
+
+.nav-link {
+    color: whitesmoke !important;
+  }
+  
+  .nav-link:hover {
+    color: rgba(60, 232, 177, 1) !important;
+  }
+
 #login_link {
     display: none;
 }
@@ -12,8 +28,12 @@ body {
 }
 
 .navbar {
-    box-shadow: 0 4px 6px rgba(60, 232, 177, 0.5);
+    box-shadow: 0 4px 6px rgba(60, 232, 177, 1);
 }
+
+/*#logged-in {
+    color: rgba(60, 232, 177, 1);
+}*/
 
 .overlay-title {
     position: absolute;
@@ -32,7 +52,7 @@ body {
     top: 50%; 
     left: 50%; 
     transform: translate(-50%, -5%); 
-    color: whitesmoke; 
+    color: rgba(60, 232, 177, 1); 
     padding: 10px 10px; 
     font-size: 5vw; 
     text-align: center;
