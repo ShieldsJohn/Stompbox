@@ -42,9 +42,9 @@ body {
     transform: translate(-50%, -75%); 
     color: whitesmoke; 
     padding: 10px 10px; 
-    font-size: 7.5vw; 
+    font-size: 10vw; 
     text-align: center;
-    text-shadow: 0 0 40px rgba(60, 232, 177, 0.5);
+    text-shadow: 0 0 40px rgba(60, 232, 177, .75);
 }
 
 .overlay-tagline {
@@ -59,7 +59,7 @@ body {
 }
 
 .btn-social {
-    color: rgba(60, 232, 177, 0.5);
+    color: rgba(60, 232, 177, 1);
 }
 
 .dj-page {
