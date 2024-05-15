@@ -3,24 +3,25 @@
 
 {% block content %}
 
-<div class="container">
-    <div class="row">
-      <div class="col-md-8 mt-3 offset-md-2">
+<div class="dj-page">
+    <div class="container">
+        <div class="row">
+        <div class="col-md-8 mt-3 offset-md-2">
 
-<h1>Delete MyStompbox</h1>
+    <h1>Delete MyStompbox</h1>
 
-<p>Are you sure you want to delete MyStompbox and all held data?</p>
-    <form method="post">
-        {% csrf_token %}
-        <input type="hidden" name="confirm_delete" value="Yes">
-        <button type="submit">Yes, unfortunately so...</button>
-    </form>
-    <p>
-    <form method="post">
-        {% csrf_token %}
-        <input type="hidden" name="confirm_delete" value="No">
-        <button type="submit">No! What am I doing?!</button>
-    </form>
-    </p>
-
+    <p>Are you sure you want to delete MyStompbox and all held data?</p>
+        <form method="post">
+            {% csrf_token %}
+            <input type="hidden" name="confirm_delete" value="Yes">
+            <button type="submit">Yes, unfortunately so...</button>
+        </form>
+        <p>
+        <form method="post">
+            {% csrf_token %}
+            <input type="hidden" name="confirm_delete" value="No">
+            <button type="submit">No! What am I doing?!</button>
+        </form>
+        </p>
+</div>
 {% endblock %}

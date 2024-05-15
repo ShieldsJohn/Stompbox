@@ -5,24 +5,24 @@
 {% load static %}
 
 {% block content %}
+<div class="dj-page">
+  <div class="container">
+      <div class="row">
+        <div class="col-md-8 mt-3 offset-md-2">
 
-<div class="container">
-    <div class="row">
-      <div class="col-md-8 mt-3 offset-md-2">
+  <h1>MyStompbox</h1>
 
-<h1>MyStompbox</h1>
+  <p>
+  <a href="{% url 'view_myaccount' %}">MyAccount</a>
+  </p>
 
-<p>
-<a href="{% url 'view_myaccount' %}">MyAccount</a>
-</p>
-
-<p>
-  <a href="{% url 'my_listings' %}">MyListings</a>
-</p>
-  
-<p>
-  <a href="{% url 'delete_account_confirmation' %}">Delete MyStompbox</a>
-</p>
-
+  <p>
+    <a href="{% url 'my_listings' %}">MyListings</a>
+  </p>
+    
+  <p>
+    <a href="{% url 'delete_account_confirmation' %}">Delete MyStompbox</a>
+  </p>
+</div>
 
 {% endblock %}

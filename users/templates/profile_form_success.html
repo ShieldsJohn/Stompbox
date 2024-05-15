@@ -4,19 +4,20 @@
 
 {% block content %}
 
-<div class="container">
-    <div class="row">
-      <div class="col-md-8 mt-3 offset-md-2">
-        
-<p>
-    Thank you - you're MyAccount has been updated successfully!
-</p>
-
-<p>
+<div class="dj-page">
+    <div class="container">
+        <div class="row">
+        <div class="col-md-8 mt-3 offset-md-2">
+            
     <p>
-    <a href="{% url 'myaccount' %}">Return to MyStompbox</a>
+        Thank you - you're MyAccount has been updated successfully!
     </p>
 
-</p>
+    <p>
+        <p>
+        <a href="{% url 'myaccount' %}">Return to MyStompbox</a>
+        </p>
 
+    </p>
+</div>
 {% endblock %}

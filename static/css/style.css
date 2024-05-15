@@ -31,9 +31,9 @@ body {
     box-shadow: 0 4px 6px rgba(60, 232, 177, 1);
 }
 
-/*#logged-in {
-    color: rgba(60, 232, 177, 1);
-}*/
+.logged-in {
+    color: rgba(60, 232, 177, 1); /* not working yet */
+}
 
 .overlay-title {
     position: absolute;
@@ -60,4 +60,8 @@ body {
 
 .btn-social {
     color: rgba(60, 232, 177, 0.5);
+}
+
+.dj-page {
+    background-color: white;
 }

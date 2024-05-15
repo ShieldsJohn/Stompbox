@@ -8,35 +8,36 @@
 
 {% block content %}
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
-            <h1>MyListings</h1>
+<div class="dj-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mt-3 offset-md-2">
+                <h1>MyListings</h1>
 
-            {% if listings %}
-                {% for listing in listings %}
-                    {% if messages %}
-                        {% for message in messages %}
-                            <div class="alert alert-{{ message.tags }}" role="alert">
-                                {{ message }}
-                            </div>
+                {% if listings %}
+                    {% for listing in listings %}
+                        {% if messages %}
+                            {% for message in messages %}
+                                <div class="alert alert-{{ message.tags }}" role="alert">
+                                    {{ message }}
+                                </div>
+                        {% endfor %}
+                        {% endif %}  
+                        <p>
+                            <a href="{% url 'listing_detail' pk=listing.pk %}">View Details</a>
+                            <a href="{% url 'update_listing' pk=listing.pk %}">Update Listing</a>
+                            <a href="{% url 'delete_listing' pk=listing.pk %}">Delete Listing</a>
+                        </p>
                     {% endfor %}
-                    {% endif %}  
-                    <p>
-                        <a href="{% url 'listing_detail' pk=listing.pk %}">View Details</a>
-                        <a href="{% url 'update_listing' pk=listing.pk %}">Update Listing</a>
-                        <a href="{% url 'delete_listing' pk=listing.pk %}">Delete Listing</a>
-                    </p>
-                {% endfor %}
-            {% else %}
-                <p>No listings yet - <a href="{% url 'create_listing' %}">create your first listing here</a>!</p>
-            {% endif %}
+                {% else %}
+                    <p>No listings yet - <a href="{% url 'create_listing' %}">create your first listing here</a>!</p>
+                {% endif %}
 
-            {% if listings %}
-                <p><a href="{% url 'create_listing' %}">Create Listing</a></p>
-            {% endif %}
+                {% if listings %}
+                    <p><a href="{% url 'create_listing' %}">Create Listing</a></p>
+                {% endif %}
+            </div>
         </div>
     </div>
 </div>
-
 {% endblock %}

@@ -54,9 +54,13 @@
 
   <main class="flex-shrink-0 main-bg bg-dark">
     {% if user.is_authenticated %}
-    <p class="text-end fs-6 fst-italic text-muted fw-light mr-4 ml-4 mt-1 mb-2 pt-1" id="logged-in"><i>You are logged in as {{ user.username }}</i></p>
+    <div class="logged-in">
+      <p class="text-end fs-6 fst-italic text-muted fw-light mr-4 ml-4 mt-1 mb-2 pt-1"><i>You are logged in as {{ user.username }}</i></p>
+    </div>
     {% else %}
-    <p class="not-logged-in text-end fs-6 fst-italic text-muted fw-light mr-4 ml-4 mt-1 mb-2 pt-1" id="not-logged-in">You are not logged in</p>
+    <div class="not-logged-in">
+      <p class="text-end fs-6 fst-italic text-muted fw-light mr-4 ml-4 mt-1 mb-2 pt-1">You are not logged in</p>
+    </div>
     {% endif %}
 
     {% block content %}
