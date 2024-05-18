@@ -2,11 +2,9 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 import uuid
-from django.contrib.auth.models import AbstractUser
-
 
 class Profile(models.Model):
-    user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     id = models.UUIDField(default=uuid.uuid4, unique=True, editable=False, primary_key=True)
     first_name = models.CharField(max_length=200)
     surname = models.CharField(max_length=200)
@@ -17,3 +15,4 @@ class Profile(models.Model):
 
     def __str__(self):
         return f"{self.first_name} {self.surname}"
+

@@ -3,6 +3,10 @@ body {
     padding-bottom: 150px;
 }
 
+/*.padding {
+    padding-top: 1000px;
+}*/
+
 .navbar-brand {
     color: whitesmoke !important;
 }

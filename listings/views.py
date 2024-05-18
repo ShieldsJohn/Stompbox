@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from .models import Listing, Profile
+from .models import Listing
+from users.models import Profile
 from .forms import ListingForm
 from django.contrib import messages
 from django.contrib.auth import get_user_model
@@ -31,7 +32,25 @@ def my_listings(request):
 @login_required
 def create_listing(request):
     try:
-        profile = request.user.profile
+        # Get logged-in user
+        logged_in_user=request.user
+        # Get user profile
+        profile=get_object_or_404(Profile, email=logged_in_user.email)
+        # Set missing fields to empty string
+        missing_fields = []
+        # Check what's missing
+        if not profile.first_name:
+            missing_fields.append('first name')
+        if not profile.surname:
+            missing_fields.append('surname')
+        if not profile.email:
+            missing_fields.append('email address')
+        # If any fields are missing, return an error message
+        if missing_fields:
+            missing_fields_str=', '.join(missing_fields)
+            messages.error(request, f'Please complete your profile.  Missing fields: {missing_fields_str}.')
+            return redirect('profile_form')
+
     except Profile.DoesNotExist:
         print("Profile does not exist for user:", request.user.username)
         messages.error(request, "Please create your profile before creating a listing.")
