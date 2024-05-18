@@ -4,7 +4,7 @@ from cloudinary.models import CloudinaryField
 import uuid
 
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     id = models.UUIDField(default=uuid.uuid4, unique=True, editable=False, primary_key=True)
     first_name = models.CharField(max_length=200)
     surname = models.CharField(max_length=200)
