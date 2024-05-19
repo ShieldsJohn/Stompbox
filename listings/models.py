@@ -52,7 +52,7 @@ class Listing(models.Model):
     class Meta:
         ordering = ["-listing_date"]
     def __str__(self):
-        return f"{self.title}"
+        return f"{self.title} - {self.price.amount:.2f} {self.price.currency}"
 
 
 
