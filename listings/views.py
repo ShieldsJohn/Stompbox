@@ -32,6 +32,7 @@ def my_listings(request):
             listings = Listing.objects.none()
 
         context['listings'] = listings
+        context['messages'] = messages.get_messages(request) # Pass messages to template context
         
         return render(request, "my_listings.html", context)
     else:
@@ -115,6 +116,10 @@ def update_listing(request, pk):
 def delete_listing(request, pk):
     listing = get_object_or_404(Listing, pk=pk)
     if request.method == 'POST':
-        listing.delete()
-        return redirect('my_listings')  # Redirect to my_listings
+        if request.POST.get('confirm_delete') == 'Yes':
+            listing.delete()
+            messages.success(request, 'Listing deleted successfully!')
+        else:
+            messages.info(request, 'Listing deletion cancelled.')
+        return redirect('my_listings')
     return render(request, 'delete_listing.html', {'listing': listing})
