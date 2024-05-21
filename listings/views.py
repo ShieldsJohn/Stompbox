@@ -20,9 +20,7 @@ def my_listings(request):
             logged_in_user=request.user
             # Get user profile
             profile=get_object_or_404(Profile, email=logged_in_user.email)
-            print(f"Profile for user {request.user}: {profile}")
             listings = Listing.objects.filter(profile=profile)
-            print(f"Listings for profile {profile}: {listings}")
 
             for listing in listings:
                 print(f"Listing PK: {listing.pk}")
@@ -34,7 +32,6 @@ def my_listings(request):
             listings = Listing.objects.none()
 
         context['listings'] = listings
-        print("Context listings:", listings)
         
         return render(request, "my_listings.html", context)
     else:
@@ -78,7 +75,7 @@ def create_listing(request):
 
             try:
                 form.save()  # Save the listing
-                messages.success(request, 'Listing created successfully!')
+                # messages.success(request, 'Listing created successfully!')
                 return redirect('my_listings')
             except Exception as e:
                 print("Error saving listing:", e)
@@ -105,10 +102,13 @@ def update_listing(request, pk):
         form = ListingForm(request.POST, request.FILES, instance=listing)
         if form.is_valid():
             form.save()
-            return redirect('listing_detail', pk=pk)
+            return redirect('listing_detail', pk=listing.pk)
     else:
-        form = ListingForm(instance=listing)
-    return render(request, 'update_listing.html', {'form': form})
+        initial_data = {'price': listing.price.amount}
+        form = ListingForm(instance=listing, initial=initial_data)
+        print("Form initial data:", form.initial)
+        print("Listing price:", form.initial)
+    return render(request, 'update_listing.html', {'form': form, 'listing': listing})
 
 # Render delete listing page if logged-in
 @login_required

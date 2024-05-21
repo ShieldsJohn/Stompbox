@@ -17,6 +17,9 @@
   <p><strong>Description: </strong>{{ listing.description }}</p>
   <p><strong>Image 1: </strong>{{ listing.image1 }}</p>
   <p><strong>Image 2: </strong>{{ listing.image2 }}</p>
+  <p>
+    <a href="{% url 'my_listings' %}">Return to MyListings</a>
+  </p>
 </div>
 
 {% endblock %}
