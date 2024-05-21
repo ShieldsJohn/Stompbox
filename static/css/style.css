@@ -69,3 +69,7 @@ body {
 .dj-page {
     background-color: white;
 }
+
+.mylistings_ul {
+    list-style-type: none;      
+}

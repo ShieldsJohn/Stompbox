@@ -12,21 +12,35 @@ User = get_user_model()
 
 @login_required
 def my_listings(request):
-    try:
-        # Attempt to get the user's profile
-        profile = request.user.profile
-    except ObjectDoesNotExist:
-        # If the profile doesn't exist, handle the error
-        profile = None
-    
-    if profile:
-        # If profile exists, get the user's listings
-        listings = Listing.objects.filter(profile=profile)
+    print("my_listings view called")
+    context = {} #initialise the context dictionary
+    if request.user.is_authenticated:
+        try:
+             # Get logged-in user
+            logged_in_user=request.user
+            # Get user profile
+            profile=get_object_or_404(Profile, email=logged_in_user.email)
+            print(f"Profile for user {request.user}: {profile}")
+            listings = Listing.objects.filter(profile=profile)
+            print(f"Listings for profile {profile}: {listings}")
+
+            for listing in listings:
+                print(f"Listing PK: {listing.pk}")
+
+        except ObjectDoesNotExist:
+            print(f"Profile does not exist for user {request.user}")
+            # If the profile doesn't exist, handle the error
+            profile = None
+            listings = Listing.objects.none()
+
+        context['listings'] = listings
+        print("Context listings:", listings)
+        
+        return render(request, "my_listings.html", context)
     else:
-        # If profile doesn't exist, set listings to an empty queryset
-        listings = Listing.objects.none()
+        # If user not logged-in, redirect to login page
+        return redirect('login')
     
-    return render(request, "my_listings.html", {'listings': listings})
 
 # Render create listing page if logged-in
 @login_required
