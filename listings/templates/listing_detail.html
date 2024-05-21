@@ -9,14 +9,14 @@
         <div class="col-md-8 mt-3 offset-md-2">
 
   <h1>{{ listing.title }}</h1>
-  <p>{{ listing.pedal_name }}</p>
-  <p>{{ listing.manufacturer_name }}</p>
-  <p>{{ listing.category_name }}</p>
-  <p>{{ listing.price }}</p>
-  <p>{{ listing.description }}</p>
-  <p>{{ listing.condition }}</p>
-  <p>{{ listing.image1 }}</p>
-  <p>{{ listing.image2 }}</p>
+  <p><strong>Pedal: </strong>{{ listing.pedal_name }}</p>
+  <p><strong>Manufacturer: </strong>{{ listing.manufacturer_name }}</p>
+  <p><strong>Category: </strong>{{ listing.category_name }}</p>
+  <p><strong>Condition: </strong>{{ listing.condition }}</p>
+  <p><strong>Price: </strong>{{ listing.price }}</p>
+  <p><strong>Description: </strong>{{ listing.description }}</p>
+  <p><strong>Image 1: </strong>{{ listing.image1 }}</p>
+  <p><strong>Image 2: </strong>{{ listing.image2 }}</p>
 </div>
 
 {% endblock %}

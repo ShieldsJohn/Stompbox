@@ -25,9 +25,9 @@
                                 <li>{{ listing.title }}</li>
                             </div>
                             <p>
-                                <a href="{% url 'listing_detail' pk=listing.pk %}"> View </a>
-                                <a href="{% url 'update_listing' pk=listing.pk %}"> Update </a>
-                                <a href="{% url 'delete_listing' pk=listing.pk %}"> Delete </a>
+                                <a href="{% url 'listing_detail' pk=listing.pk %}">&nbsp; View &nbsp; </a>
+                                <a href="{% url 'update_listing' pk=listing.pk %}">&nbsp; Update &nbsp;</a>
+                                <a href="{% url 'delete_listing' pk=listing.pk %}">&nbsp; Delete &nbsp;</a>
                             </p>
                         {% endfor %}
                     </ul>
