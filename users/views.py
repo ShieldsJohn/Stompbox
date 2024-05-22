@@ -6,6 +6,8 @@ from .forms import UserForm
 from .models import Profile
 from django.contrib.auth import get_user_model, logout
 from django.http import HttpResponseForbidden
+from django.contrib import messages
+from django.urls import reverse_lazy
 
 # Render myaccount page if logged in
 @login_required
@@ -81,8 +83,10 @@ def delete_account_confirmation(request):
             
             user.delete()
             logout(request)
-            return render(request, 'account_deleted.html')
+            messages.success(request, 'Your MyStompbox has been successfully deleted.')
+            return redirect(reverse_lazy('home'))
         elif confirm_delete == 'No':
+            messages.info(request, 'MyStompbox deletion cancelled.')
             return redirect('myaccount')  # Redirect back to myaccount page
     return render(request, 'delete_account_confirmation.html')
 

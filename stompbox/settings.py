@@ -176,9 +176,9 @@ DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 
 # Cloudinary Storage Configuration
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dkwkbn527',
-    'API_KEY': '448642266417968',
-    'API_SECRET': 'dXQcMQzaUnqZNORaSLTLcqw6sqE'
+    'CLOUD_NAME': os.environ.get('CLOUD_NAME'),
+    'API_KEY': os.environ.get('API_KEY'),
+    'API_SECRET': os.environ.get('API_SECRET'),
 }
 
 # Default primary key field type

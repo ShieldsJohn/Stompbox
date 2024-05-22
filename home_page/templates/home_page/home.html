@@ -13,4 +13,9 @@
         <div class="overlay-tagline">find your tone</div>
     </div>
 </div>
+{% for message in messages %}
+    <div class="alert alert-{{ message.tags }}">
+        {{ message }}
+    </div>
+{% endfor %}
 {% endblock %}

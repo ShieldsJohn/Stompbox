@@ -43,11 +43,8 @@ class Listing(models.Model):
         ('Broken', 'Broken'),
     ]
     condition = models.CharField(max_length=20, choices=CONDITION_CHOICES, default='Good')
-    image1 = ResizedImageField(
-        force_format='WEBP', quality=75, blank=True,
-        upload_to='static/images', default='static/images/image_coming_soon.png')
-    image2 = ResizedImageField(
-        force_format='WEBP', quality=75, upload_to='static/images', blank=True)
+    image1 = CloudinaryField('image', blank=True, null=True)
+    image2 = CloudinaryField('image', blank=True, null=True)
 
     class Meta:
         ordering = ["-listing_date"]

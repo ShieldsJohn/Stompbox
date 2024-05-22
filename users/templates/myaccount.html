@@ -11,6 +11,11 @@
         <div class="col-md-8 mt-3 offset-md-2">
 
   <h1>MyStompbox</h1>
+  {% for message in messages %}
+  <div class="alert alert-{{ message.tags }}">
+      {{ message }}
+  </div>
+  {% endfor %}
 
   <p>
   <a href="{% url 'view_myaccount' %}">MyAccount</a>
@@ -24,5 +29,4 @@
     <a href="{% url 'delete_account_confirmation' %}">Delete MyStompbox</a>
   </p>
 </div>
-
 {% endblock %}
