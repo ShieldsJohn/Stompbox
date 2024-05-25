@@ -15,15 +15,17 @@
   <p><strong>Condition: </strong>{{ listing.condition }}</p>
   <p><strong>Price: </strong>{{ listing.price }}</p>
   <p><strong>Description: </strong>{{ listing.description }}</p>
+  
   {% if listing.image1 %}
-        <img src="{{ listing.image1.url }}" alt="Image 1">
-    {% endif %}
-
-    {% if listing.image2 %}
-        <img src="{{ listing.image2.url }}" alt="Image 2">
-    {% endif %}
+    <img src="{{ listing.image1.url }}?" class="small-image" alt="Small image 1">
+  {% endif %}
+  <p></p>
+  {% if listing.image2 %}
+    <img src="{{ listing.image2.url }}?" class="small-image" alt="Small image 2">
+  {% endif %}
+  <p></p>
   <p>
-    <a href="{% url 'my_listings' %}">Return to MyListings</a>
+    <a href="{% url 'my_listings' %}" class="btn btn-block btn-dark">Return to MyListings</a>
   </p>
 </div>
 

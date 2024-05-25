@@ -9,19 +9,19 @@
   <div class="container">
       <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
-
-  <p>Name: {{ profile.first_name }}</p>
-  <p>Surname: {{ profile.surname }}</p>
-  <p>City: {{ profile.city }}</p>
-  <p>Country: {{ profile.country }}</p>
-  <p>Email: {{ profile.email }}</p>
+          <h1>MyAccount</h1>
+          <p>Name: {{ profile.first_name }}</p>
+          <p>Surname: {{ profile.surname }}</p>
+          <p>City: {{ profile.city }}</p>
+          <p>Country: {{ profile.country }}</p>
+          <p>Email: {{ profile.email }}</p>
 
   <p>
-    <a href="{% url 'profile_form' %}">Update MyAccount</a>
+    <a href="{% url 'profile_form' %}"  class="btn btn-block btn-green">Update MyAccount</a>
   </p>
 
   <p>
-    <a href="{% url 'myaccount' %}">Return to MyStompbox</a>
+    <a href="{% url 'myaccount' %}" class="btn btn-block btn-dark">Return to MyStompbox</a>
   </p>
 </div>
 {% endblock %}

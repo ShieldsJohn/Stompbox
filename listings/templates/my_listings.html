@@ -24,27 +24,25 @@
                 {% endif %}
                 <p>
                     {% if listings %}
-                    <p><a href="{% url 'create_listing' %}">Create Listing</a></p>
+                    <p><a href="{% url 'create_listing' %}" class="btn btn-block btn-green">Create Listing</a></p>
                 {% endif %}
                 </p>
                 {% if listings %}
                     <ul class="mylistings_ul">
                         {% for listing in listings %}
                             <div class="listing">
-                                <li>{{ listing.title }}</li>
+                                <li><strong>{{ listing.title }}</strong></li>
+                                <a href="{% url 'listing_detail' pk=listing.pk %}" class="btn btn-sm py-0 px-1 btn-dark">&nbsp; View &nbsp; </a>
+                                <a href="{% url 'update_listing' pk=listing.pk %}" class="btn btn-sm py-0 px-1 btn-dark">&nbsp; Update &nbsp;</a>
+                                <a href="{% url 'delete_listing' pk=listing.pk %}" class="btn btn-sm py-0 px-1 btn-dark">&nbsp; Delete &nbsp;</a>
                             </div>
-                            <p>
-                                <a href="{% url 'listing_detail' pk=listing.pk %}">&nbsp; View &nbsp; </a>
-                                <a href="{% url 'update_listing' pk=listing.pk %}">&nbsp; Update &nbsp;</a>
-                                <a href="{% url 'delete_listing' pk=listing.pk %}">&nbsp; Delete &nbsp;</a>
-                            </p>
                         {% endfor %}
                     </ul>
                 {% else %}
                     <p>No listings yet - <a href="{% url 'create_listing' %}">create your first listing here</a>!</p>
                 {% endif %}
                 <p>
-                    <a href="{% url 'myaccount' %}">Return to MyStompbox</a>
+                    <a href="{% url 'myaccount' %}" class="btn btn-block btn-dark">Return to MyStompbox</a>
                   </p>
             </div>
         </div>

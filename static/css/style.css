@@ -3,10 +3,6 @@ body {
     padding-bottom: 150px;
 }
 
-/*.padding {
-    padding-top: 1000px;
-}*/
-
 .navbar-brand {
     color: whitesmoke !important;
 }
@@ -72,4 +68,23 @@ body {
 
 .mylistings_ul {
     list-style-type: none;      
+}
+
+.btn-green {
+    background-color: rgba(60, 232, 177, 1);
+    border-color: rgba(60, 232, 177, 1);
+}
+
+.btn-block {
+    text-transform: none !important;
+}
+
+.small-image {
+    height: auto;
+    max-width: 50%;
+}
+
+.medium-image {
+    height: auto;
+    max-width: 80%;
 }

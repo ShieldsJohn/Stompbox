@@ -18,15 +18,15 @@
   {% endfor %}
 
   <p>
-  <a href="{% url 'view_myaccount' %}">MyAccount</a>
+  <a href="{% url 'view_myaccount' %}" class="btn btn-block btn-green">MyAccount</a>
   </p>
 
   <p>
-    <a href="{% url 'my_listings' %}">MyListings</a>
+    <a href="{% url 'my_listings' %}" class="btn btn-block btn-dark">MyListings</a>
   </p>
     
   <p>
-    <a href="{% url 'delete_account_confirmation' %}">Delete MyStompbox</a>
+    <a href="{% url 'delete_account_confirmation' %}" class="btn btn-block btn-green">Delete MyStompbox</a>
   </p>
 </div>
 {% endblock %}
