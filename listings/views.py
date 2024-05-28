@@ -63,8 +63,9 @@ def create_listing(request):
             form.instance.profile = profile
             try:
                 form.save()
-                print("Listing created successfully. Redirecting to my_listings.")
+                messages.success(request, 'Listing created successfully.')
                 return redirect('my_listings')
+                
             except Exception as e:
                 print("Error saving listing:", e)
                 messages.error(request, 'Failed to create listing.')
