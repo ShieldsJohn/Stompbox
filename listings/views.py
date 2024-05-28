@@ -12,71 +12,54 @@ User = get_user_model()
 
 @login_required
 def my_listings(request):
-    print("my_listings view called")
-    context = {} #initialise the context dictionary
-    if request.user.is_authenticated:
-        try:
-             # Get logged-in user
-            logged_in_user=request.user
-            # Get user profile
-            profile=get_object_or_404(Profile, email=logged_in_user.email)
-            listings = Listing.objects.filter(profile=profile)
-
-            for listing in listings:
-                print(f"Listing PK: {listing.pk}")
-
-        except ObjectDoesNotExist:
-            print(f"Profile does not exist for user {request.user}")
-            # If the profile doesn't exist, handle the error
-            profile = None
-            listings = Listing.objects.none()
-
-        context['listings'] = listings
-        context['messages'] = messages.get_messages(request) # Pass messages to template context
-        
-        return render(request, "my_listings.html", context)
-    else:
-        # If user not logged-in, redirect to login page
-        return redirect('login')
+    context = {}  # Initialize the context dictionary
     
+    try:
+        # Attempt to get the user's profile
+        profile = request.user.profile
+        # If profile exists, get the user's listings
+        listings = Listing.objects.filter(profile=profile)
+        context['listings'] = listings
+    except ObjectDoesNotExist:
+        # If the profile doesn't exist, handle the error
+        profile = None
+        # Set listings to an empty queryset
+        context['listings'] = Listing.objects.none()
 
+    return render(request, "my_listings.html", context)
+    
 # Render create listing page if logged-in
 @login_required
 def create_listing(request):
     try:
-        # Get logged-in user
-        logged_in_user=request.user
-        # Get user profile
-        profile=get_object_or_404(Profile, email=logged_in_user.email)
-        # Set missing fields to empty string
+        logged_in_user = request.user
+        profile = get_object_or_404(Profile, email=logged_in_user.email)
         missing_fields = []
-        # Check what's missing
         if not profile.first_name:
             missing_fields.append('first name')
         if not profile.surname:
             missing_fields.append('surname')
         if not profile.email:
             missing_fields.append('email address')
-        # If any fields are missing, return an error message
         if missing_fields:
-            missing_fields_str=', '.join(missing_fields)
-            messages.error(request, f'Please complete your profile.  Missing fields: {missing_fields_str}.')
+            missing_fields_str = ', '.join(missing_fields)
+            messages.error(request, f'Please complete your profile. Missing fields: {missing_fields_str}.')
+            print("Redirecting to profile_form due to missing fields.")
             return redirect('profile_form')
-
     except Profile.DoesNotExist:
         print("Profile does not exist for user:", request.user.username)
         messages.error(request, "Please create your profile before creating a listing.")
+        print("Redirecting to profile_form due to profile does not exist.")
         return redirect('profile_form')
 
     if request.method == 'POST':
         form = ListingForm(request.POST, request.FILES)
         if form.is_valid():
             form.instance.price_currency = 'GBP'
-            form.instance.profile = profile  # Associate the listing with the user's profile
-
+            form.instance.profile = profile
             try:
-                form.save()  # Save the listing
-                # messages.success(request, 'Listing created successfully!')
+                form.save()
+                print("Listing created successfully. Redirecting to my_listings.")
                 return redirect('my_listings')
             except Exception as e:
                 print("Error saving listing:", e)

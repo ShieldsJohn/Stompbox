@@ -2,7 +2,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views import generic
 from django.contrib.auth.models import User
-from .forms import UserForm
+from .forms import ProfileForm
 from .models import Profile
 from django.contrib.auth import get_user_model, logout
 from django.http import HttpResponseForbidden
@@ -30,7 +30,7 @@ def profile_form(request):
         if request.POST.get('email') != user.email:
             return HttpResponseForbidden("You are not authorised to update this profile.")
         
-        form = UserForm(request.POST, instance=profile)
+        form = ProfileForm(request.POST, instance=profile)
         
         if form.is_valid():
             form.save()
@@ -38,14 +38,14 @@ def profile_form(request):
         else:
             print(form.errors)  # Print form errors to console
     else:
-        form = UserForm(instance=profile)
+        form = ProfileForm(instance=profile)
     
     return render(request, 'profile_form.html', {'form': form})
 
 @login_required
 def view_myaccount(request):
     if request.method == 'POST':
-        form = UserForm(request.POST)
+        form = ProfileForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('profile_form_success')
@@ -57,7 +57,7 @@ def view_myaccount(request):
             return render(request, 'view_myaccount.html', {'profile': profile})
         except Profile.DoesNotExist:
             initial_data = {'email': request.user.email}
-            form = UserForm(initial=initial_data)
+            form = ProfileForm(initial=initial_data)
             return render(request, 'profile_form.html', {'form': form})
 
     return render(request, 'view_myaccount.html', {'form': form})
