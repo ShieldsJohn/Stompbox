@@ -1,9 +1,12 @@
 from django.shortcuts import render
 from django.views import generic
 from django.shortcuts import redirect
+from listings.models import Category
+
 
 def home(request):
-    return render(request, "home_page/home.html")
+    categories = Category.objects.all()  # Retrieve all categories from the database
+    return render(request, "home_page/home.html", {"categories": categories})
 
 def socials(request, platform):
     platform_urls = {
