@@ -36,11 +36,15 @@ def create_listing(request):
         profile = get_object_or_404(Profile, email=logged_in_user.email)
         missing_fields = []
         if not profile.first_name:
-            missing_fields.append('first name')
+            missing_fields.append('First Name')
         if not profile.surname:
-            missing_fields.append('surname')
+            missing_fields.append('Surname')
         if not profile.email:
-            missing_fields.append('email address')
+            missing_fields.append('Email address')
+        if not profile.city:
+            missing_fields.append('City')
+        if not profile.country:
+            missing_fields.append('Country')
         if missing_fields:
             missing_fields_str = ', '.join(missing_fields)
             messages.error(request, f'Please complete your profile. Missing fields: {missing_fields_str}.')
