@@ -3,9 +3,9 @@ from django.views import generic
 from django.shortcuts import redirect
 from listings.models import Category
 
-
 def home(request):
-    categories = Category.objects.all()  # Retrieve all categories from the database
+    # Retrieve all categories from the database
+    categories = Category.objects.all()
     return render(request, "home_page/home.html", {"categories": categories})
 
 def socials(request, platform):

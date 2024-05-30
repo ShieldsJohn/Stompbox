@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from .models import Listing
+from .models import Listing, Pedal, Category
 from users.models import Profile
 from .forms import ListingForm
 from django.contrib import messages
@@ -111,3 +111,11 @@ def delete_listing(request, pk):
             messages.info(request, 'Listing deletion cancelled.')
         return redirect('my_listings')
     return render(request, 'delete_listing.html', {'listing': listing})
+
+
+def category_page(request, category_id):
+    # Retrieve the category based on ID
+    category = get_object_or_404(Category, id=category_id)
+    # Retrieve all pedals belonging to selected category
+    pedals = Pedal.objects.filter(category_name=category)
+    return render(request, 'category_page.html', {'category': category, 'pedals': pedals})

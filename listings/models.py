@@ -22,7 +22,7 @@ class Manufacturer(models.Model):
 class Pedal(models.Model):
     pedal_name = models.CharField(max_length=200, unique=True)
     manufacturer_name = models.ForeignKey(Manufacturer, on_delete=models.CASCADE)
-    catergory_name = models.ForeignKey(Category, on_delete=models.CASCADE)
+    category_name = models.ForeignKey(Category, on_delete=models.CASCADE)
     
     def __str__(self):
         return f"{self.pedal_name}"
