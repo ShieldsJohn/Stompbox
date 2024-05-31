@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="pedal-detail">
+    <h1>{{ listing.title }}</h1>
+    {{ listing.pedal_name}}
+    {{ listing.manufacturer_name }}
+    {{ listing.profile }}
+    {{ listing.listing_date }}
+    {{ listing.price }}
+    {{ listing.description }}
+    {{ listing.condition }}
+    {{ listing.condition }}
+    
+    <div class="pedal-images">
+        {% if pedal.image1 %}
+            <img src="{{ pedal.image1.url }}" alt="Pedal Image 1">
+        {% endif %}
+        {% if pedal.image2 %}
+            <img src="{{ pedal.image2.url }}" alt="Pedal Image 2">
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

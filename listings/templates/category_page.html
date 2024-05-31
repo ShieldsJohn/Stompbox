@@ -2,20 +2,31 @@
 {% load static %}
 
 {% block content %}
-
 <div class="dj-page">
     <div class="container">
         <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
-
-    <h1>{{ category.title }}</h1>
-    <p></p>
-    <ul>
-    {% for pedal in pedals %}
-    <li>{{ pedal.pedal_name }}</li>
-    {% endfor %}
-    </ul>
-
+            <div class="col-md-8 mt-3 offset-md-2">
+                <h1>{{ category.title }}</h1>
+                <p></p>
+                <div class="row">
+                    {% for item in pedals_with_listings %}
+                        <div class="col-md-4 mb-4">
+                            <div class="pedal-card">
+                                <h3>{{ item.pedal.pedal_name }}</h3>
+                                <a href="{% url 'pedal_detail' pedal_id=item.pedal.id %}">
+                                    <img class="img-fluid resized-image" src="{% if item.listing.image1 %}{{ item.listing.image1.url }}{% else %}{% static 'path/to/default/image.jpg' %}{% endif %}" alt="Pedal Thumbnail">
+                                </a>
+                            </div>
+                        </div>
+                        {% if forloop.counter|divisibleby:3 and not forloop.last %}
+                            </div><div class="row">
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
 
 {% block extra_js %}

@@ -15,7 +15,7 @@ body {
     color: whitesmoke !important;
   }
   
-  .nav-link:hover {
+.nav-link:hover {
     color: rgba(60, 232, 177, 1) !important;
   }
 
@@ -62,14 +62,17 @@ body {
     color: rgba(60, 232, 177, 1);
 }
 
+/* django template pages */
 .dj-page {
     background-color: white;
 }
 
+/* remove list styling from unordered lists */
 .mylistings_ul {
     list-style-type: none;      
 }
 
+/* change Bootstrap button default colours */
 .btn-green {
     background-color: rgba(60, 232, 177, 1);
     border-color: rgba(60, 232, 177, 1);
@@ -79,6 +82,7 @@ body {
     text-transform: none !important;
 }
 
+/* mylistings styling*/
 .small-image {
     height: auto;
     max-width: 50%;
@@ -95,4 +99,11 @@ body {
     justify-content: center;
     align-items: center;
     gap: 10px;
+}
+
+/* category page styling */
+.resized-image {
+    width: 200px; 
+    height: 200px; 
+    object-fit: cover; 
 }

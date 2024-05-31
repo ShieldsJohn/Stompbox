@@ -112,10 +112,25 @@ def delete_listing(request, pk):
         return redirect('my_listings')
     return render(request, 'delete_listing.html', {'listing': listing})
 
-
 def category_page(request, category_id):
     # Retrieve the category based on ID
     category = get_object_or_404(Category, id=category_id)
     # Retrieve all pedals belonging to selected category
     pedals = Pedal.objects.filter(category_name=category)
-    return render(request, 'category_page.html', {'category': category, 'pedals': pedals})
+    
+    # Create a list of pedals with their associated listing
+    pedals_with_listings = []
+    for pedal in pedals:
+        listings = Listing.objects.filter(pedal_name=pedal)
+        for listing in listings:
+            pedals_with_listings.append({
+                'pedal': pedal,
+                'listing': listing
+            })
+
+    return render(request, 'category_page.html', {'category': category, 'pedals_with_listings': pedals_with_listings})
+
+
+def pedal_detail(request, pedal_id):
+    pedal = get_object_or_404(Pedal, id=pedal_id)
+    return render(request, 'pedal_detail.html', {'pedal': pedal})
