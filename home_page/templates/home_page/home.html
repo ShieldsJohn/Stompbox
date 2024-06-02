@@ -22,11 +22,11 @@
 <div class="container">
     <div class="row">
         {% for category in categories %}
-        <div class="col-md-3">
-            <div class="card">
+        <div class="col-md-3 d-flex">
+            <div class="card flex-fill">
                 <a href="{% url 'category_page' category_id=category.id %}">
                     <div class="card-body">
-                        <h5 class="card-title">{{ category.title }}</h5>
+                        <h5 class="card-title"><strong>{{ category.title }}</strong></h5>
                     </div>
                 </a>
             </div>
@@ -36,4 +36,7 @@
     </div>
 </div>
 <p></p>
+<script src="{% static 'javascript/animation.js' %}"></script>
+<script src="{% static 'javascript/card_titles.js' %}"></script>
+
 {% endblock %}

@@ -107,3 +107,49 @@ body {
     height: 200px; 
     object-fit: cover; 
 }
+
+/* Home page card styling */
+.card {
+    background-color: rgba(60, 232, 177, 1);
+    border: 1px solid rgba(60, 232, 177, 1);
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80%;
+}
+
+.card a {
+    color: inherit;
+}
+
+/* Make card titles fit on a single line */
+.card-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+}
+
+.card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+/* JS animation classes */
+@keyframes scaleUp {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
+.card.scale-up {
+    animation: scaleUp 0.5s forwards;
+}

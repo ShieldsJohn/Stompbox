@@ -97,6 +97,7 @@ def delete_account_confirmation(request):
 def account_deleted(request):
     return render(request, 'account_deleted.html')
 
+# No actual email functionality created at this point
 def contact_seller(request, listing_id):
     listing = get_object_or_404(Listing, pk=listing_id)
 
