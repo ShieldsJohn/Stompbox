@@ -133,4 +133,5 @@ def category_page(request, category_id):
 
 def pedal_detail(request, pedal_id):
     pedal = get_object_or_404(Pedal, id=pedal_id)
-    return render(request, 'pedal_detail.html', {'pedal': pedal})
+    listing = Listing.objects.filter(pedal_name=pedal).first
+    return render(request, 'pedal_detail.html', {'pedal': pedal, 'listing': listing})

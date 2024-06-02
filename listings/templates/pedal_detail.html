@@ -2,24 +2,32 @@
 {% load static %}
 
 {% block content %}
-<div class="pedal-detail">
-    <h1>{{ listing.title }}</h1>
-    {{ listing.pedal_name}}
-    {{ listing.manufacturer_name }}
-    {{ listing.profile }}
-    {{ listing.listing_date }}
-    {{ listing.price }}
-    {{ listing.description }}
-    {{ listing.condition }}
-    {{ listing.condition }}
-    
-    <div class="pedal-images">
-        {% if pedal.image1 %}
-            <img src="{{ pedal.image1.url }}" alt="Pedal Image 1">
-        {% endif %}
-        {% if pedal.image2 %}
-            <img src="{{ pedal.image2.url }}" alt="Pedal Image 2">
-        {% endif %}
+<div class="dj-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mt-3 offset-md-2">
+                <div class="pedal-detail">
+                    <h1>{{ pedal.title }}</h1>
+                    <p><strong>Pedal: </strong>{{ pedal.pedal_name}}</p>
+                    <p><strong>Manufacturer: </strong>{{ pedal.manufacturer_name }}</p>
+                    <p><strong>Seller: </strong>{{ listing.profile }}</p>
+                    <p><strong>Listed on: </strong>{{ listing.listing_date }}</p>
+                    <p><strong>Price: </strong>{{ listing.price }}</p>
+                    <p><strong>Condition:</strong>{{ listing.condition }}</p>
+                    <p><strong>Description: </strong>{{ listing.description }}</p>
+
+                    <div class="pedal-images">
+                        {% if listing.image1 %}
+                        <img src="{{ listing.image1.url }}" class="medium-image" alt="Pedal Image 1">
+                        {% endif %}
+                        <p></p>
+                        {% if listing.image2 %}
+                        <img src="{{ listing.image2.url }}" class="medium-image" alt="Pedal Image 2">
+                        <p></p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
 {% endblock %}
