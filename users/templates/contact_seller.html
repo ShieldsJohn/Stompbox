@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% url 'contact_seller' as contact_seller_url %}
+{& load static &}
+
+
+{% block content %}
+
+<div class="dj-page">
+  <div class="container">
+      <div class="row">
+        <div class="col-md-8 mt-3 offset-md-2">
+          <h1>Contact Seller</h1>
+          <p></p>
+          <form method="post" action="{% url 'contact_seller' listing.id %}?next={{ request.path }}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Send</button>
+        </form>
+        <p></p>
+      
+{% endblock %}

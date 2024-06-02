@@ -7,10 +7,18 @@
         <div class="row">
             <div class="col-md-8 mt-3 offset-md-2">
                 <div class="pedal-detail">
+                    {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-success" role="alert">
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                    {% endif %}
                     <h1>{{ pedal.title }}</h1>
                     <p><strong>Pedal: </strong>{{ pedal.pedal_name}}</p>
                     <p><strong>Manufacturer: </strong>{{ pedal.manufacturer_name }}</p>
-                    <p><strong>Seller: </strong>{{ listing.profile }}</p>
+                    <p><strong>Seller: </strong>{{ listing.profile }} - <a
+                            href="{% url 'contact_seller' listing.id %}">Contact Seller</a></p>
                     <p><strong>Listed on: </strong>{{ listing.listing_date }}</p>
                     <p><strong>Price: </strong>{{ listing.price }}</p>
                     <p><strong>Condition:</strong>{{ listing.condition }}</p>
@@ -30,4 +38,4 @@
             </div>
         </div>
     </div>
-{% endblock %}
+    {% endblock %}

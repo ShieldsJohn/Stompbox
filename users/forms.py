@@ -7,3 +7,7 @@ class ProfileForm(forms.ModelForm):
         model = Profile
         fields = ['first_name', 'surname', 'email', 'city', 'country' ]
 
+class ContactForm(forms.Form):
+    subject = forms.CharField(max_length=100)
+    message = forms.CharField(widget=forms.Textarea)
+    email = forms.EmailField()

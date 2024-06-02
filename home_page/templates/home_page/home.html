@@ -5,6 +5,11 @@
 
 <!--Header-->
 <!-- Hero -->
+{% for message in messages %}
+    <div class="alert alert-{{ message.tags }}">
+        {{ message }}
+    </div>
+{% endfor %}
 <div class="image-container">
     <div class="bg-image position-relative">
         <img src="{% static 'images/pedals_landing.jpg' %}" alt="A selection of pedals" class="w-100" />
@@ -13,11 +18,6 @@
         <div class="overlay-tagline">find your tone</div>
     </div>
 </div>
-{% for message in messages %}
-    <div class="alert alert-{{ message.tags }}">
-        {{ message }}
-    </div>
-{% endfor %}
 <p></p>
 <div class="container">
     <div class="row">
