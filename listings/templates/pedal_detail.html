@@ -21,7 +21,7 @@
                             href="{% url 'contact_seller' listing.id %}">Contact Seller</a></p>
                     <p><strong>Listed on: </strong>{{ listing.listing_date }}</p>
                     <p><strong>Price: </strong>{{ listing.price }}</p>
-                    <p><strong>Condition:</strong>{{ listing.condition }}</p>
+                    <p><strong>Condition: </strong>{{ listing.get_condition_display }}</p>
                     <p><strong>Description: </strong>{{ listing.description }}</p>
 
                     <div class="pedal-images">
