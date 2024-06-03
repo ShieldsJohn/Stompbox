@@ -1,6 +1,10 @@
 body {
     background-color: white;
     padding-bottom: 115px;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
 }
 
 .navbar-brand {
@@ -24,7 +28,7 @@ body {
 }
 
 .navbar-toggler {
-    background-color: darkgrey;
+    background-color: rgba(60, 232, 177, 1);
 }
 
 .navbar {
