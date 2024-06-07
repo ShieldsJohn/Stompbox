@@ -1,3 +1,4 @@
+// Check if there are no elements with the class 'card-title'
 document.addEventListener('DOMContentLoaded', function() {
     var titles = document.querySelectorAll('.card-title');
     if (titles.length === 0) return;
@@ -10,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var currentFontSize = maxFontSize;
         title.style.fontSize = currentFontSize + 'px';
         while (title.scrollWidth > title.clientWidth && currentFontSize > 0) {
-            currentFontSize -= 0.5; // Adjust font size if needed
+            currentFontSize -= 0.5;
             title.style.fontSize = currentFontSize + 'px';
         }
         maxFontSize = Math.min(maxFontSize, currentFontSize);

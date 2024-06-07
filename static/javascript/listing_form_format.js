@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let value = parseFloat(priceInput.value);
         if (!isNaN(value)) {
             priceInput.value = value.toFixed(2);
-        }
+        }   
     });
 
     priceInput.addEventListener('input', function() {
