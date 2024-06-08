@@ -59,21 +59,24 @@ def create_listing(request):
     if request.method == 'POST':
         form = ListingForm(request.POST, request.FILES)
         if form.is_valid():
-            form.instance.price_currency = 'GBP'
-            form.instance.profile = profile
-            try:
-                form.save()
-                messages.success(request, 'Listing created successfully.')
-                return redirect('my_listings')
-                
-            except Exception as e:
-                print("Error saving listing:", e)
-                messages.error(request, 'Failed to create listing.')
+            if 'image1' not in request.FILES and 'image2' not in request.FILES:
+                form.add_error(None, 'Please upload at least one image.')
+            else:
+                form.instance.price_currency = 'GBP'
+                form.instance.profile = profile
+                try:
+                    form.save()
+                    messages.success(request, 'Listing created successfully.')
+                    return redirect('my_listings')
+                except Exception as e:
+                    print("Error saving listing:", e)
+                    messages.error(request, 'Failed to create listing.')
         else:
             print(form.errors)
     else:
         initial_currency = {'price_currency': 'GBP'}
         form = ListingForm(initial=initial_currency)
+
 
     return render(request, 'create_listing.html', {'form': form})
 
