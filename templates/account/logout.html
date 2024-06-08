@@ -22,7 +22,11 @@
                     {% if redirect_field_value %}
                     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                     {% endif %}
-                    <button class="btn btn-signup right" type="submit">{% trans 'Log out' %}</button>
+                    <button class="btn btn-block btn-green" type="submit">{% trans 'Log out' %}</button>
+                    <p></p>
+                    <p>
+                        <a href="{% url 'myaccount' %}" class="btn btn-block btn-dark">Return to MyStompbox</a>
+                    </p>
                 </form>
             </div>
         </div>

@@ -17,6 +17,7 @@ class Profile(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     def __str__(self):
         return f"{self.first_name} {self.surname}"
+    # Code below provided by Tomas Kubancik at Code Institute
     # Receiver added to automatically create profile    
     @receiver(post_save, sender=User)
     def create_or_update_user_profile(sender, instance, created, **kwargs):
