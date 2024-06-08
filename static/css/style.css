@@ -35,8 +35,12 @@ body {
     box-shadow: 0 4px 6px rgba(60, 232, 177, 1);
 }
 
-.logged-in {
-    color: rgba(60, 232, 177, 1); /* not working yet */
+.logged-in p {
+    color: rgba(60, 232, 177, 1) !important;
+}
+
+.text-white {
+    color: #FFF !important;
 }
 
 .overlay-title {
