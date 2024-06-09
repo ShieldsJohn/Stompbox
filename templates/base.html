@@ -1,24 +1,25 @@
-{% load static %}
-{% url 'account_login' as login_url %}
-{% url 'account_signup' as signup_url %}
-{% url 'account_logout' as logout_url %}
-
 <!doctype html>
 <html lang="en">
 
 <head>
-  <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Stompbox</title>
+  {% load static %}
+  {% url 'account_login' as login_url %}
+  {% url 'account_signup' as signup_url %}
+  {% url 'account_logout' as logout_url %}
+  <!-- Required meta tags -->
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.css"
     integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.css" rel="stylesheet">
   <!--Google Fonts-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
   <!--fontawesome-->
@@ -59,11 +60,13 @@
   <main class="flex-shrink-0 main-bg bg-dark">
     {% if user.is_authenticated %}
     <div class="logged-in">
-      <p class="text-end fs-6 fst-italic text-muted fw-light mr-4 ml-4 mt-1 mb-2 pt-1"><i>You are logged in as {{ user.username }}</i></p>
+      <p class="text-end fs-6 fst-italic text-muted fw-light mr-4 ml-4 mt-1 mb-2 pt-1"><i>You are logged in as
+          {{ user.username }}</i></p>
     </div>
     {% else %}
     <div class="not-logged-in text-white">
-      <p class="text-end text-white fs-6 fst-italic text-muted fw-light mr-4 ml-4 mt-1 mb-2 pt-1">You are not logged in</p>
+      <p class="text-end text-white fs-6 fst-italic text-muted fw-light mr-4 ml-4 mt-1 mb-2 pt-1">You are not logged in
+      </p>
     </div>
     {% endif %}
 
@@ -73,16 +76,16 @@
 
     <div class="container">
       {% if messages %}
-          <div class="messages">
-              {% for message in messages %}
-                  <div class="alert {% if message.tags %}alert-{{ message.tags }}{% else %}alert-info{% endif %}" role="alert">
-                      {{ message }}
-                  </div>
-              {% endfor %}
-          </div>
+      <div class="messages">
+        {% for message in messages %}
+        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% else %}alert-info{% endif %}" role="alert">
+          {{ message }}
+        </div>
+        {% endfor %}
+      </div>
       {% endif %}
-      {% endblock %}
     </div>
+    {% endblock %}
 
   </main>
 
@@ -92,16 +95,20 @@
       <!-- Section: Social media -->
       <section class="mb-3">
         <!-- Facebook -->
-        <a class="btn btn-outline-light btn-floating m-1 btn-social" href="{% url 'socials' 'facebook' %}" role="button" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a class="btn btn-outline-light btn-floating m-1 btn-social" href="{% url 'socials' 'facebook' %}" role="button"
+          target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
 
         <!-- X -->
-        <a class="btn btn-outline-light btn-floating m-1 btn-social" href="{% url 'socials' 'twitter' %}" role="button" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        <a class="btn btn-outline-light btn-floating m-1 btn-social" href="{% url 'socials' 'twitter' %}" role="button"
+          target="_blank" aria-label="X"><i class="fab fa-x-twitter"></i></a>
 
         <!-- Instagram -->
-        <a class="btn btn-outline-light btn-floating m-1 btn-social" href="{% url 'socials' 'instagram' %}" role="button" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a class="btn btn-outline-light btn-floating m-1 btn-social" href="{% url 'socials' 'instagram' %}"
+          role="button" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
 
         <!-- YouTube -->
-        <a class="btn btn-outline-light btn-floating m-1 btn-social" href="{% url 'socials' 'youtube' %}" role="button" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a class="btn btn-outline-light btn-floating m-1 btn-social" href="{% url 'socials' 'youtube' %}" role="button"
+          target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
       </section>
       <!-- Section: Social media -->
     </div>
@@ -126,7 +133,7 @@
     integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
   </script>
 
-{% block extra_js %}{% endblock %}
+  {% block extra_js %}{% endblock %}
 </body>
 
 </html>
