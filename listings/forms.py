@@ -1,6 +1,7 @@
 from django import forms
 from .models import Listing 
 
+# Listing form
 class ListingForm(forms.ModelForm):
     price = forms.DecimalField(
         decimal_places=2,

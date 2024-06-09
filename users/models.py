@@ -6,6 +6,7 @@ from django.db import transaction
 from django.db.utils import IntegrityError
 import uuid
 
+# User profile model
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     id = models.UUIDField(default=uuid.uuid4, unique=True, editable=False, primary_key=True)

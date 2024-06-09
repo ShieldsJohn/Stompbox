@@ -12,12 +12,12 @@ from django.urls import reverse_lazy
 from django.core.mail import send_mail
 from django.http import HttpResponseRedirect
 
-
 # Render myaccount page if logged in
 @login_required
 def myaccount(request):
     return render(request, "myaccount.html")
 
+# Update user profile if logged in
 @login_required
 def profile_form(request):
     user = request.user
@@ -46,6 +46,7 @@ def profile_form(request):
     
     return render(request, 'profile_form.html', {'form': form})
 
+# View MyAccount if logged in
 @login_required
 def view_myaccount(request):
     if request.method == 'POST':
@@ -97,6 +98,7 @@ def delete_account_confirmation(request):
 def account_deleted(request):
     return render(request, 'account_deleted.html')
 
+# Render contact seller form
 # No actual email functionality created at this point
 def contact_seller(request, listing_id):
     listing = get_object_or_404(Listing, pk=listing_id)

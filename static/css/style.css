@@ -1,3 +1,4 @@
+/* Body */
 body {
     background-color: white;
     padding-bottom: 115px;
@@ -7,6 +8,7 @@ body {
     font-variation-settings: "wdth" 100;
 }
 
+/* Navbar */
 .navbar-brand {
     color: whitesmoke !important;
 }
@@ -43,6 +45,7 @@ body {
     color: #FFF !important;
 }
 
+/* Hero */
 .overlay-title {
     position: absolute;
     top: 50%; 
@@ -66,6 +69,7 @@ body {
     text-align: center;
 }
 
+/* Footer */
 .btn-social {
     color: rgba(60, 232, 177, 1);
 }
@@ -86,11 +90,12 @@ body {
     border-color: rgba(60, 232, 177, 1);
 }
 
+/* General buttons */
 .btn-block {
     text-transform: none !important;
 }
 
-/* mylistings styling*/
+/* images */
 .small-image {
     height: auto;
     max-width: 50%;
@@ -109,14 +114,14 @@ body {
     gap: 10px;
 }
 
-/* category page styling */
+/* category page */
 .resized-image {
     width: 200px; 
     height: 200px; 
     object-fit: cover; 
 }
 
-/* Home page card styling */
+/* Home page cards */
 .card {
     background-color: rgba(60, 232, 177, 1);
     border: 1px solid rgba(60, 232, 177, 1);

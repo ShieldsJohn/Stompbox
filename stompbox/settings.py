@@ -26,10 +26,10 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
+# SECURITY WARNING: keep the secret key used in production secret! - PUT INTO ENV.PY
 SECRET_KEY = 'django-insecure-3ls@yjq+#t18wa&*w4b6f=v3a!k**4rok=lw#y0!7^2=21i^wp'
 
-# SECURITY WARNING: don't run with debug turned on in production!
+# SECURITY WARNING: don't run with debug turned on in production! - Re Tomas' comment
 DEBUG = True
 
 ALLOWED_HOSTS = ['8000-shieldsjohn-stompbox-hc42ee3uqm8.ws-eu114.gitpod.io', '.herokuapp.com']
@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'users',
 ]
 
+# Currency settings
 DEFAULT_CURRENCY = 'GBP'
 USE_THOUSAND_SEPARATOR = True
 
@@ -98,14 +99,6 @@ WSGI_APPLICATION = 'stompbox.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': BASE_DIR / 'db.sqlite3',
-#    }
-#}
-
 
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))

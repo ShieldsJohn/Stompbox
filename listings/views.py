@@ -10,6 +10,7 @@ from django.core.exceptions import ObjectDoesNotExist
 
 User = get_user_model()
 
+# View to render user's listings on MyListings page
 @login_required
 def my_listings(request):
     context = {}  # Initialize the context dictionary
@@ -115,6 +116,7 @@ def delete_listing(request, pk):
         return redirect('my_listings')
     return render(request, 'delete_listing.html', {'listing': listing})
 
+# Render category page with listing previews
 def category_page(request, category_id):
     # Retrieve the category based on ID
     category = get_object_or_404(Category, id=category_id)
@@ -133,7 +135,7 @@ def category_page(request, category_id):
 
     return render(request, 'category_page.html', {'category': category, 'pedals_with_listings': pedals_with_listings})
 
-
+# Render pedal/listing detail page, accessible from category page
 def pedal_detail(request, pedal_id):
     pedal = get_object_or_404(Pedal, id=pedal_id)
     listing = Listing.objects.filter(pedal_name=pedal).first
