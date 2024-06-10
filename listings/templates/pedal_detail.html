@@ -14,7 +14,8 @@
                     </div>
                     {% endfor %}
                     {% endif %}
-                    <h1>{{ pedal.title }}</h1>
+                    <h1>{{ pedal.pedal_name }}</h1>
+                    <p></p>
                     <p><strong>Pedal: </strong>{{ pedal.pedal_name}}</p>
                     <p><strong>Manufacturer: </strong>{{ pedal.manufacturer_name }}</p>
                     <p><strong>Seller: </strong>{{ listing.profile }} - <a
@@ -41,4 +42,5 @@
             </div>
         </div>
     </div>
-    {% endblock %}
+</div>
+{% endblock %}

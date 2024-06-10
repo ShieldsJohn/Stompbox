@@ -6,20 +6,23 @@
 <div class="dj-page">
     <div class="container">
         <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
+            <div class="col-md-8 mt-3 offset-md-2">
 
-    <h1>Create Listing</h1>
+                <h1>Create Listing</h1>
 
-    <form method="post" enctype="multipart/form-data" id="create_listing">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-block btn-green">Create Listing</button>
-    </form>
-    <p></p>
+                <form method="post" enctype="multipart/form-data" id="create_listing">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-block btn-green">Create Listing</button>
+                </form>
+            </div>
+        </div>
+        <p></p>
+    </div>
 </div>
 
-{% endblock %}
+            {% endblock %}
 
-{% block extra_js %}
-<script src="{% static 'javascript/listing_form_format.js' %}"></script>
-{% endblock %}
+            {% block extra_js %}
+            <script src="{% static 'javascript/listing_form_format.js' %}"></script>
+            {% endblock %}

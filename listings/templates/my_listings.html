@@ -14,37 +14,44 @@
             <div class="col-md-8 mt-3 offset-md-2">
                 <h1><i class="fa-solid fa-table-list"></i> MyListings</h1>
                 {% if messages %}
-                    <div class="messages">
-                        {% for message in messages %}
-                            <div class="alert {% if message.tags %}alert-{{ message.tags }}{% else %}alert-info{% endif %}" role="alert">
-                                {{ message }}
-                            </div>
-                        {% endfor %}
+                <div class="messages">
+                    {% for message in messages %}
+                    <div class="alert {% if message.tags %}alert-{{ message.tags }}{% else %}alert-info{% endif %}"
+                        role="alert">
+                        {{ message }}
                     </div>
+                    {% endfor %}
+                </div>
                 {% endif %}
                 <p>
                     {% if listings %}
-                    <p><a href="{% url 'create_listing' %}" class="btn btn-block btn-green">Create Listing</a></p>
-                {% endif %}
+                    <a href="{% url 'create_listing' %}" class="btn btn-block btn-green">Create Listing</a>
+                    {% endif %}
                 </p>
                 {% if listings %}
-                    <ul class="mylistings_ul">
-                        {% for listing in listings %}
-                            <div class="listing">
-                                <li><strong>{{ listing.title }}</strong></li>
-                                <a href="{% url 'listing_detail' pk=listing.pk %}" class="btn btn-sm py-0 px-1 btn-dark">&nbsp; View &nbsp; </a>
-                                <a href="{% url 'update_listing' pk=listing.pk %}" class="btn btn-sm py-0 px-1 btn-dark">&nbsp; Update &nbsp;</a>
-                                <a href="{% url 'delete_listing' pk=listing.pk %}" class="btn btn-sm py-0 px-1 btn-dark">&nbsp; Delete &nbsp;</a>
-                            </div>
-                            <p></p>
-                        {% endfor %}
-                    </ul>
+                <ul class="mylistings_ul">
+                    {% for listing in listings %}
+                    <li class="listing">
+                        <div>
+                            <strong>{{ listing.title }}</strong>
+                            <p>
+                                <a href="{% url 'listing_detail' pk=listing.pk %}"
+                                    class="btn btn-sm py-0 px-1 btn-dark">&nbsp; View &nbsp; </a>
+                                <a href="{% url 'update_listing' pk=listing.pk %}"
+                                    class="btn btn-sm py-0 px-1 btn-dark">&nbsp; Update &nbsp;</a>
+                                <a href="{% url 'delete_listing' pk=listing.pk %}"
+                                    class="btn btn-sm py-0 px-1 btn-dark">&nbsp; Delete &nbsp;</a>
+                            </p>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
                 {% else %}
-                    <p>No listings yet - <a href="{% url 'create_listing' %}">create your first listing here</a>!</p>
+                <p>No listings yet - <a href="{% url 'create_listing' %}">create your first listing here</a>!</p>
                 {% endif %}
                 <p>
                     <a href="{% url 'myaccount' %}" class="btn btn-block btn-dark">Return to MyStompbox</a>
-                  </p>
+                </p>
             </div>
         </div>
     </div>
