@@ -1,7 +1,7 @@
 /* Body */
 body {
     background-color: white;
-    padding-bottom: 115px;
+    padding-bottom: 95px;
     font-family: "Open Sans", sans-serif;
     font-style: normal;
     font-variation-settings: "wdth" 100;
@@ -164,4 +164,15 @@ body {
 
 .card.scale-up {
     animation: scaleUp 0.5s forwards;
+}
+
+
+/* Media queries */
+
+/* Adjust cards for tablets */ 
+@media (min-width: 576px) and (max-width: 768px) {
+    .card {
+        flex: 0 0 75%;
+        
+    }
 }
