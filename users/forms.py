@@ -2,11 +2,13 @@ from django import forms
 from django.contrib.auth.models import User
 from .models import Profile
 
+
 # User profile form
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ['first_name', 'surname', 'email', 'city', 'country' ]
+        fields = ['first_name', 'surname', 'email', 'city', 'country']
+
 
 # Contact seller form
 class ContactForm(forms.Form):

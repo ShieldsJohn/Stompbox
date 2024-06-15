@@ -1,5 +1,6 @@
 from django import forms
-from .models import Listing 
+from .models import Listing
+
 
 # Listing form
 class ListingForm(forms.ModelForm):
@@ -10,10 +11,18 @@ class ListingForm(forms.ModelForm):
 
     class Meta:
         model = Listing
-        fields = ['title', 'pedal_name', 'manufacturer_name', 'category_name', 'price', 'description', 'condition', 'image1', 'image2']
+        fields = [
+            'title',
+            'pedal_name',
+            'manufacturer_name',
+            'category_name',
+            'price',
+            'description',
+            'condition',
+            'image1',
+            'image2',
+            ]
 
     def clean_price(self):
         price = self.cleaned_data['price']
         return round(price, 2)
-
-        

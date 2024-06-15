@@ -6,20 +6,28 @@ from django.db import transaction
 from django.db.utils import IntegrityError
 import uuid
 
+
 # User profile model
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
-    id = models.UUIDField(default=uuid.uuid4, unique=True, editable=False, primary_key=True)
+    user = models.OneToOneField(
+        User, on_delete=models.CASCADE, null=True)
+    id = models.UUIDField(
+        default=uuid.uuid4,
+        unique=True,
+        editable=False,
+        primary_key=True)
     first_name = models.CharField(max_length=200)
     surname = models.CharField(max_length=200)
     email = models.EmailField(max_length=200, unique=True)
     city = models.CharField(max_length=200)
     country = models.CharField(max_length=200)
     created = models.DateTimeField(auto_now_add=True)
+
     def __str__(self):
         return f"{self.first_name} {self.surname}"
+
     # Code below provided by Tomas Kubancik at Code Institute
-    # Receiver added to automatically create profile    
+    # Receiver added to automatically create profile
     @receiver(post_save, sender=User)
     def create_or_update_user_profile(sender, instance, created, **kwargs):
         """
@@ -29,12 +37,18 @@ class Profile(models.Model):
             # Check if profile with the same email already exists
             try:
                 with transaction.atomic():
-                    if not Profile.objects.filter(email=instance.email).exists():
-                        Profile.objects.create(user=instance, email=instance.email)
+                    if not Profile.objects.filter(
+                            email=instance.email).exists():
+                        Profile.objects.create(
+                            user=instance, email=instance.email)
                     else:
-                        print(f"A profile with email {instance.email} already exists.")
+                        print(
+                            f"A profile with email "
+                            "{instance.email} already exists.")
             except IntegrityError:
-                print(f"An error occurred while creating the profile for email {instance.email}.")
+                print(
+                    f"An error occurred while creating the "
+                    "profile for email {instance.email}.")
         else:
             # Update profile if the user instance is updated
             try:

@@ -30,4 +30,4 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('home_page/<str:platform>', home_views.socials, name='socials'),
 
-] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
