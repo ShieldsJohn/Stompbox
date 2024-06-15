@@ -1,8 +1,11 @@
 # Stompbox
 
-(link to deployed site)
+View the live website here!
 
-(image showing the website on various devices)
+https://stompbox-340be760f293.herokuapp.com/
+
+
+![Image showing the home page on various devices](readme_images/responsive/stompbox_responsive_image.png)
 
 ## Overview
 Stompbox is an effects pedal listing site, where sellers can create an account and list their pedals for sale.  Potential buyers can browse pedals by category and contact sellers for more information or to complete a private sale, much like Gumtree.  The site provides CRUD functionality to sellers for their account and listings.
