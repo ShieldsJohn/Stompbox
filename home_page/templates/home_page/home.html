@@ -5,6 +5,7 @@
 
 <!--Header-->
 <!-- Hero -->
+<div class="home_page bg-dark">
 {% for message in messages %}
 <div class="alert alert-{{ message.tags }}">
     {{ message }}
@@ -34,6 +35,7 @@
         </div>
         {% endfor %}
     </div>
+</div>
 </div>
 <p></p>
 <script src="{% static 'javascript/animation.js' %}"></script>
