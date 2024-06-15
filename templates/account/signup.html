@@ -14,20 +14,46 @@
 
         <p>{% blocktrans %}
           Welcome to Stompbox - sign up to sell your pedals!
-          {% endblocktrans %}</p>
+          {% endblocktrans %}
+        </p>
       </div>
     </div>
     <div class="row">
       <div class="col-md-8 mt-3 offset-md-2">
-
+        <!--Django forms were returning html validation errors, so have broken it down-->
         <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
           {% csrf_token %}
-          {{ form.as_p }}
+          
+          <!-- Manually render each form field -->
+          <div class="form-group">
+            {{ form.username.label_tag }} {{ form.username }}
+            {% if form.username.help_text %}
+              <div class="form-text text-muted">{{ form.username.help_text|safe }}</div>
+            {% endif %}
+          </div>
+          <div class="form-group">
+            {{ form.email.label_tag }} {{ form.email }}
+            {% if form.email.help_text %}
+              <div class="form-text text-muted">{{ form.email.help_text|safe }}</div>
+            {% endif %}
+          </div>
+          <div class="form-group">
+            {{ form.password1.label_tag }} {{ form.password1 }}
+            {% if form.password1.help_text %}
+              <div class="form-text text-muted">{{ form.password1.help_text|safe }}</div>
+            {% endif %}
+          </div>
+          <div class="form-group">
+            {{ form.password2.label_tag }} {{ form.password2 }}
+            {% if form.password2.help_text %}
+              <div class="form-text text-muted">{{ form.password2.help_text|safe }}</div>
+            {% endif %}
+          </div>
           {% if redirect_field_value %}
-          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}">
           {% endif %}
           <button class="btn btn-signup right" type="submit">{% trans "Sign Up" %} &raquo;</button>
-        </form>
+        </form>                
       </div>
     </div>
   </div>
