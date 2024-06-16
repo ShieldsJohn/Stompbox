@@ -422,3 +422,388 @@ When a user selects 'Delete Listing' from MyListings, they are taken to the dele
 When a user selects 'Delete MyStompbox' from MyStompbox, they are taken to the delete MyStompbox confirmation page, where they have the choices of 'Yes, unfortunately so...' or 'No!  What am I doing?!'.  If no is selected, the user is returned to MyStompbox and a deletion cancellation message is displayed.  If the user selects yes, the user is returned to the home page, where a deletion success message is displayed and the logged-in indicator shows they are no longer logged in.  All user information and related listings are deleted and no longer visible on the website.
 
 
+### New Features
+
+New features to include in the future are:
+
+- Add email functionality to allow users to reset password and contact seller
+- Allow users to add their own pedals and not just select from a menu
+- Add search functionality i.e. by manufacturer or pedal name
+- Add more customisation of profiles and allow non-registered to view seller profles
+- Allow buyers to create an account and profile
+- Allow buyers to add pedals to favourites
+- Add notifications to buyers if a favourited pedal is no longer available
+
+
+## 6. Testing
+
+### 6.1 Code Validation
+
+### HTML
+
+All HTML testing has passed validation with https://validator.w3.org/ as demonstrated below.  This was done by right-clicking on a given webpage and selecting 'View Page Source', then copying the rendered code and pasting in the 'Validate by direct input' field on W3C, click check and then resolve any errors found by correcting in the html files.
+
+### Home
+
+![home_html](readme_images/testing/html/home.html.png)
+
+
+### Sign up
+
+![signup_html](readme_images/testing/html/signup.html.png)
+
+
+### Log in
+
+![login_html](readme_images/testing/html/login.html.png)
+
+
+### Log out
+
+![logout_html](readme_images/testing/html/logout.html.png)
+
+
+### Password Reset
+
+![password_reset_html](readme_images/testing/html/password_reset.html.png)
+
+
+### Password Reset Done
+
+![password_reset_done_html](readme_images/testing/html/password_reset_done.html.png)
+
+
+### Category
+
+![category_html](readme_images/testing/html/category_page.html.png)
+
+
+### Pedal detail
+
+![pedal_html](readme_images/testing/html/pedal_detail.html.png)
+
+
+### MyListings
+
+![mylistings_html](readme_images/testing/html/my_listings.html.png)
+
+
+### Create Listing
+
+![create_listing_html](readme_images/testing/html/create_listing.html.png)
+
+
+### Listing Detail
+
+![listing_detail_html](readme_images/testing/html/listing_detail.html.png)
+
+
+### Update Listing
+
+![update_listing_html](readme_images/testing/html/update_listing.html.png)
+
+
+### Delete Listing
+
+![delete_listing_html](readme_images/testing/html/delete_listing.html.png)
+
+
+### CSS
+
+The style.css file passed validation at https://jigsaw.w3.org/css-validator/
+
+This was done by copying the code from the style.css file and pasting it into the 'By direct input' field, seleting 'Check' then addressing any issues by correcting the style.css file.
+
+![css](readme_images/testing/css/style.css.png)
+
+
+### JavaScript
+
+All JS files have passed validation at https://jshint.com/
+
+This was done by copying the code from each of the JS files and pasting in the input field at jshint.com.  Any errors are detailed on the side and are addressed by reviewing and correcting the code in the JS files.
+
+### animation.js
+
+![animation_js](readme_images/testing/js/animation.js.png)
+
+
+### card_titles.js
+
+![card_titles_js](readme_images/testing/js/card_titles.js.png)
+
+
+### listing_form_format.js
+
+![listing_form_format_js](readme_images/testing/js/listing_form_format.js.png)
+
+
+### Python
+
+All Python files passed validation at https://pep8ci.herokuapp.com/ except settings.py, as the AUTH_PASSWORD_VALIDATORS exceed the character length and I could not reduce the size of them.
+
+This was done by copying the code from the python files and pasting into the pep8ci field.  I then address any errors in the python files.
+
+
+### Home page apps.py
+
+![home_apps](readme_images/testing/python/home_page_apps.py.png)
+
+
+### Home page urls.py
+
+![home_urls](readme_images/testing/python/home_page_urls.py.png)
+
+
+###  Home page views.py
+
+![home_views](readme_images/testing/python/home_page_views.py.png)
+
+
+###  Listings admin.py
+
+![listings_admin](readme_images/testing/python/listings_admin.py.png)
+
+
+### Listings apps.py
+
+![listings_apps](readme_images/testing/python/listings_apps.py.png)
+
+
+### Listings forms.py
+
+![listings_forms](readme_images/testing/python/listings_forms.py.png)
+
+
+### Listings models.py
+
+![listings_models](readme_images/testing/python/listings_models.py.png)
+
+
+### Listings urls.py
+
+![listings_urls](readme_images/testing/python/listings_urls.py.png)
+
+
+### Listings views.py
+
+![listings_views](readme_images/testing/python/listings_views.py.png)
+
+### manage.py
+
+![manage](readme_images/testing/python/manage.py.png)
+
+
+### Stompbox asgi.py
+
+![stompbox_asgi](readme_images/testing/python/stompbox_asgi.py.png)
+
+
+### Stompbox settings.py
+
+![stompbox_settings](readme_images/testing/python/stompbox_settings.py.png)
+
+
+### Stompbox urls.py
+
+![stompbox_urls](readme_images/testing/python/stompbox_urls.py.png)
+
+
+### Stompbox wsgi.py
+
+![stompbox_wsgi](readme_images/testing/python/stompbox_wsgi.py.png)
+
+
+### Users admin.py
+
+![users_admin](readme_images/testing/python/users_admin.py.png)
+
+
+### Users forms.py
+
+![users_forms](readme_images/testing/python/users_forms.py.png)
+
+
+### Users models.py
+
+![users_models](readme_images/testing/python/users_models.py.png)
+
+
+### Users urls.py
+
+![users_urls](readme_images/testing/python/users_urls.py.png)
+
+
+### Users views.py
+
+![users_views](readme_images/testing/python/users_views.py.png)
+
+
+## 6.2 Test Cases
+
+Here I manually tested all features and documented the outcomes.
+
+
+### Test Case 1 - User can browse and contact seller
+
+![tc1](readme_images/testing/test_cases/tc1_browse.png)
+
+
+### Test Case 2 - User sign up
+
+![tc2](readme_images/testing/test_cases/tc2_sign_up.png)
+
+
+### Test Case 3 - User log in and out
+
+![tc3](readme_images/testing/test_cases/tc3_log_in_out.png)
+
+
+### Test Case 4 - User update MyAccount
+
+![tc4](readme_images/testing/test_cases/tc4_update_myaccount.png)
+
+
+### Test Case 5 - User create listing
+
+![tc5](readme_images/testing/test_cases/tc5_create_listing.png)
+
+
+### Test Case 6 - User view listing
+
+![tc6](readme_images/testing/test_cases/tc6_view_listing.png)
+
+
+### Test Case 7 - User update listing
+
+![tc7](readme_images/testing/test_cases/tc7_update_listing.png)
+
+
+### Test Case 8 - User delete listing
+
+![tc8](readme_images/testing/test_cases/tc8_delete_listing.png)
+
+
+### Test Case 9 - User delete MyStompbox
+
+![tc9](readme_images/testing/test_cases/tc9_delete_mystompbox.png)
+
+
+### Test Case 10 - User navbar and footer navigation
+
+![tc10](readme_images/testing/test_cases/tc10_navbar_footer.png)
+
+
+## 6.3 Lighthouse
+
+I have tested for accessibility using Lighthouse within Chrome Dev Tools.  Here is a sample of those results.
+
+### Home page
+
+### Mobile
+
+![home_mobile](readme_images/testing/lighthouse/home_mobile.png)
+
+
+### Desktop
+
+![home_mobile](readme_images/testing/lighthouse/home_desktop.png)
+
+
+### Category
+
+### Mobile
+
+![category_mobile](readme_images/testing/lighthouse/category_mobile.png)
+
+### Desktop
+
+![category_desktop](readme_images/testing/lighthouse/category_desktop.png)
+
+
+### Listing detail
+
+### Mobile
+
+![listing_detail_mobile](readme_images/testing/lighthouse/listing_detail_mobile.png)
+
+### Desktop
+
+![listing_detail_desktop](readme_images/testing/lighthouse/listing_detail_desktop.png)
+
+
+## 6.4 Responsiveness
+
+I have tested responsiveness through the development process to ensure page layouts and content looks appropriate on each device size.  I tested this with Chrome Dev Tools and on my personal iPhone 14 and Lenovo Thinkpad.  Here are some samples.
+
+### Home page
+
+### Mobile
+
+![home_mobile](readme_images/testing/responsiveness/responsiveness_home_mobile.png)
+
+### Tablet
+
+![home_tablet](readme_images/testing/responsiveness/responsiveness_home_tablet.png)
+
+### Laptop
+
+![home_laptop](readme_images/testing/responsiveness/responsiveness_home_laptop.png)
+
+
+### Category
+
+### Mobile
+
+![category_mobile](readme_images/testing/responsiveness/responsiveness_category_mobile.png)
+
+### Tablet
+
+![category_tablet](readme_images/testing/responsiveness/responsiveness_category_tablet.png)
+
+### Laptop
+
+![category_laptop](readme_images/testing/responsiveness/responsiveness_category_laptop.png)
+
+
+### Pedal detail
+
+### Mobile
+
+![pedal_mobile](readme_images/testing/responsiveness/responsiveness_pedal_mobile.png)
+
+### Tablet
+
+![pedal_tablet](readme_images/testing/responsiveness/responsiveness_pedal_tablet.png)
+
+### Laptop
+
+![pedal_laptop](readme_images/testing/responsiveness/responsiveness_pedal_laptop.png)
+
+
+## 7. Bugs
+
+During development I encountered the following bugs:
+
+### Open
+
+
+[Burger menu icon disappearing](https://github.com/ShieldsJohn/Stompbox/issues/24)
+
+[Card title lengths exceeding card widths](https://github.com/ShieldsJohn/Stompbox/issues/40)
+
+### Closed
+
+[Social media links connecting to relevant site](https://github.com/ShieldsJohn/Stompbox/issues/26)
+
+[Exceeding character limit in Listing model](https://github.com/ShieldsJohn/Stompbox/issues/27)
+
+[URL tags not working after moving AllAuth templates](https://github.com/ShieldsJohn/Stompbox/issues/28)
+
+[User profiles not deleting](https://github.com/ShieldsJohn/Stompbox/issues/29)
+
+[Unable to migrate changes to Listings model](https://github.com/ShieldsJohn/Stompbox/issues/30)
+
+[Listings not linked to user](https://github.com/ShieldsJohn/Stompbox/issues/31)
+
+
