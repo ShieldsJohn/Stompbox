@@ -253,3 +253,557 @@ This stores the manufacturer names and is a ForeignKey in the pedal model.
 
 This has a one-to-many relationship as many pedals and listings will use category data from this model.
 
+
+## 4. Agile Methodology
+
+The planning and execution of this project was carried out by following aigle principles.  The main milestones or epics of the project were identified, the user stories relating to achieving these milestones were assigned and tasks were listed.  This was all administered through Github Issues, as shown below.
+
+### All Epics (Milestones)
+
+![epics](readme_images/github/milestones.png)
+
+### An Example Epic
+
+![epic4](readme_images/github/milestone4.png)
+
+### An Example User Story
+
+![epic_us](readme_images/github/milestone4_us.png)
+
+### 4.1 Github Projects
+
+The workflow for this was managed using Github projects, the user stories below moved through the Kanban, depending on the stage of progress, from To Do, In Progress to Done, or Unfinished or Bugs.
+
+![kanban](readme_images/github/kanban.png)
+
+### 4.2 MoSCoW Prioritisation
+
+This is a method of identifying and prioritising the most crucial tasks in a project first.  MoSCoW stands for Must Have, Should Have, Could Have and Won't Have.  From the image below you can see examples of this prioritisation in action.
+
+![moscow_prioritisation](readme_images/github/moscow.png)
+
+
+## 5. Features
+
+### 5.1 Navbar
+
+![navbar](readme_images/screenshots/features/navbar.png)
+
+This navbar is displayed at the top of each page and is fully responsive.  It was created with Bootstrap.  The 'Stompbox' title serves as a home page link.  There are also links for MyStompbox which will take logged in users to their MyStompbox account, or it will ask non-logged-in users to either log-in or sign-up.  There is also a 'Sign Up' link which is a more direct way for unregistered users to sign up.  All links have a green hover effect to aid user feedback.
+
+There is also a logged-in indicator that will read as 'You are not logged in' by default.  Only when a user is logged in, will it turn green and read as 'You are logeed in as 'user''.
+
+
+### 5.2 Footer
+
+![footer](readme_images/screenshots/features/footer.png)
+
+The footer is displayed at the bottom of each page and is fully responsive.  It was created with Bootstrap.  The footer serves as a quick link to Stompbox's social media sites, which will open on new browser tabs.  The icons are hyperlinks to the respective social media sites and will turn white on hover, to aid user feedback.
+
+
+### 5.3 Home page
+
+![home_page](readme_images/screenshots/responsive/responsive_home_tablet.png)
+
+
+The first thing you'll see on the home page is a hero image showing effects pedals.  This is to make it immediately clear what the main focus of the website is.  The title 'Stompbox' is concise, memorable and a familiar term to those who use effects pedals.  This along with the tagline 'find your tone' reinforces the purpose of the website.
+
+The category buttons below the hero image allow the user to immediately start browsing for pedals by category.  These also animate when hovered over to provide user feedback.
+
+
+### 5.4 Category page
+
+![category_page](readme_images/screenshots/features/category.png)
+
+When a user selects a category to browse, they are taken to this page which displays all pedals for sale in that category.  There is also a button to return to the home page to view the other categories.
+
+
+### 5.5 Pedal detail page
+
+![pedal_detail_page](readme_images/screenshots/features/pedal_detail.png)
+
+When a user clicks on an image of a pedal from the category page, they are taken to a pedal detail page, where they can see a listing information and two large images of the pedal for closer inspection.  There is also a button to return the user to the category page and a 'Contact Seller' link, so the user can contact the seller for more information.
+
+
+### 5.6 Contact Seller
+
+![contact_seller_page](readme_images/screenshots/features/contact_seller.png)
+
+When a user selects 'Contact Seller' from the pedal detail page, they are taken to the contact seller page a form is displayed for the the user to submit a subject, message and their own email address.  At this point, the email functionality is not in place to send this to the seller.  The user will be returned to the home page a message success message is displayed for confirmation.
+
+
+### 5.7 Sign up
+
+![sign_up](readme_images/screenshots/features/signup.png)
+
+When the user selects 'Sign up!' from the home page, they are presented with a form where they must submit a unique username, unique email address, password and password confirmation.  If either the username or email address are not unique, the user will receive a message, asking them to do so.  Likewise, if the passwords do not meet the requested criteria, warning messages will remind the user to submit a valid password.
+
+Once signed up, the user is returned to the home page and their logged-in status shows as logged in, a sign up success message is also displayed.
+
+
+### 5.8 Log in
+
+![login](readme_images/screenshots/features/login.png)
+
+When a user selects 'MyStompbox' from the home page, they are taken to the Log in page, where they will submit their username and password.  If the password is invalid, a message tells them it's incorrect and to try again.  If the login in successful, the user is taken to the 'MyStompbox' page.
+
+
+### 5.9 Forgot Password
+
+![forgot_password](readme_images/screenshots/features/forgot_password.png)
+
+When a user selects 'Forgot Password' from the log in page, they are taken to the password reset page, where they can submit their email address to receive a password reset link by email.
+
+Note, as before, there is no email functionality in this project yet.  When the user submits, they are taken to a password confirmation page with further instructions.  From there, they have the option to return to the home page.
+
+
+### 5.10 Log out
+
+![logout](readme_images/screenshots/features/logout.png)
+
+When a user selects 'Log out' from the navbar, they are taken to the log out page where they can either select 'Log out' or 'Return to MyStompbox'.  If they chose 'Log out', they are redirected to the home page and a log out success message is displayed.
+
+
+### 5.11 MyStompbox
+
+![mystompbox](readme_images/screenshots/features/mystompbox.png)
+
+When a user has logged in they are taken to the MyStompbox page.  This is where they can update thier profile information in MyAccount and in MyListings they can create, view, update and delete listings.  They can also delete their MyStompbox (user account and all associated listings) here too.
+
+
+### 5.12 MyAccount
+
+![myaccount](readme_images/screenshots/features/myaccount.png)
+
+When a user selects 'MyAccount' from the MyStompbox page, they are taken to the MyAccount page where they can view the current information held.  If the user selects 'Update MyAccount', they are taken to the page below, where they can submit new profile information.  Upon submission, the user is taken to a success page, where they then have the option to return to 'MyStompbox'.
+
+![myaccount](readme_images/screenshots/features/update_myaccount.png)
+
+
+### 5.13 MyListings
+
+![mylistings](readme_images/screenshots/features/mylistings.png)
+
+When a user selects 'MyListings' from the MyStompbox page, they are taken to the MyListings page, where if they have previously created listings, these will be listed, along with options to view, update or delete.  If they have not previously created any listings, a message is displayed inviting them to do so.  There is also an option to return to MyStompbox.
+
+
+### 5.14 Create Listing
+
+![create_listing](readme_images/screenshots/features/create_listing.png)
+
+When a user selects 'Create Listing' from MyListings page, they are taken to a create listing form, where they can submit all the required information and upload two images.  All fields including images are required and the user will be warned if anything is incomplete.  When the user submits by clicking 'Create Listing', they are returned to MyListings, where they can see their new listing.
+
+
+### 5.15 View Listing
+
+![view_listing](readme_images/screenshots/features/view_listing.png)
+
+When a user selects 'View Listing' from MyListings page, they are taken to the view listing page where they can see the details and images they have sumitted.  There is also a button to 'Return to MyListings'.
+
+
+### 5.16 Update Listing
+
+![update_listing](readme_images/screenshots/features/update_listing.png)
+
+When a user selects 'Update Listing' from MyListings page, they are taken to the update listing page where the form the user completed when creating the listing is displayed with all current listing infomrmation populated.  The user can then change the relevant information and submit.  Again, they will be returned to MyListings.
+
+
+### 5.17 Delete Listing
+
+![delete_listing](readme_images/screenshots/features/delete_listing.png)
+
+When a user selects 'Delete Listing' from MyListings, they are taken to the delete listing page, where they are presented with the choices of 'Yep' or 'Not yet'.  If the user proceeds with the deletion, they are returned to MyListings, where they can see the listing no longer exists and a deletion success message is displayed.  If the user cancels the deletion, the user again is returned to MyListings, but a deletion cancellation message is displayed.
+
+
+### 5.18 Delete MyStompbox
+
+![delete_mystompbox](readme_images/screenshots/features/delete_mystompbox.png)
+
+When a user selects 'Delete MyStompbox' from MyStompbox, they are taken to the delete MyStompbox confirmation page, where they have the choices of 'Yes, unfortunately so...' or 'No!  What am I doing?!'.  If no is selected, the user is returned to MyStompbox and a deletion cancellation message is displayed.  If the user selects yes, the user is returned to the home page, where a deletion success message is displayed and the logged-in indicator shows they are no longer logged in.  All user information and related listings are deleted and no longer visible on the website.
+
+
+### New Features
+
+New features to include in the future are:
+
+- Add email functionality to allow users to reset password and contact seller
+- Allow users to add their own pedals and not just select from a menu
+- Add search functionality i.e. by manufacturer or pedal name
+- Add more customisation of profiles and allow non-registered to view seller profles
+- Allow buyers to create an account and profile
+- Allow buyers to add pedals to favourites
+- Add notifications to buyers if a favourited pedal is no longer available
+
+
+## 6. Testing
+
+### 6.1 Code Validation
+
+### HTML
+
+All HTML testing has passed validation with https://validator.w3.org/ as demonstrated below.  This was done by right-clicking on a given webpage and selecting 'View Page Source', then copying the rendered code and pasting in the 'Validate by direct input' field on W3C, click check and then resolve any errors found by correcting in the html files.
+
+### Home
+
+![home_html](readme_images/testing/html/home.html.png)
+
+
+### Sign up
+
+![signup_html](readme_images/testing/html/signup.html.png)
+
+
+### Log in
+
+![login_html](readme_images/testing/html/login.html.png)
+
+
+### Log out
+
+![logout_html](readme_images/testing/html/logout.html.png)
+
+
+### Password Reset
+
+![password_reset_html](readme_images/testing/html/password_reset.html.png)
+
+
+### Password Reset Done
+
+![password_reset_done_html](readme_images/testing/html/password_reset_done.html.png)
+
+
+### Category
+
+![category_html](readme_images/testing/html/category_page.html.png)
+
+
+### Pedal detail
+
+![pedal_html](readme_images/testing/html/pedal_detail.html.png)
+
+
+### MyListings
+
+![mylistings_html](readme_images/testing/html/my_listings.html.png)
+
+
+### Create Listing
+
+![create_listing_html](readme_images/testing/html/create_listing.html.png)
+
+
+### Listing Detail
+
+![listing_detail_html](readme_images/testing/html/listing_detail.html.png)
+
+
+### Update Listing
+
+![update_listing_html](readme_images/testing/html/update_listing.html.png)
+
+
+### Delete Listing
+
+![delete_listing_html](readme_images/testing/html/delete_listing.html.png)
+
+
+### CSS
+
+The style.css file passed validation at https://jigsaw.w3.org/css-validator/
+
+This was done by copying the code from the style.css file and pasting it into the 'By direct input' field, seleting 'Check' then addressing any issues by correcting the style.css file.
+
+![css](readme_images/testing/css/style.css.png)
+
+
+### JavaScript
+
+All JS files have passed validation at https://jshint.com/
+
+This was done by copying the code from each of the JS files and pasting in the input field at jshint.com.  Any errors are detailed on the side and are addressed by reviewing and correcting the code in the JS files.
+
+### animation.js
+
+![animation_js](readme_images/testing/js/animation.js.png)
+
+
+### card_titles.js
+
+![card_titles_js](readme_images/testing/js/card_titles.js.png)
+
+
+### listing_form_format.js
+
+![listing_form_format_js](readme_images/testing/js/listing_form_format.js.png)
+
+
+### Python
+
+All Python files passed validation at https://pep8ci.herokuapp.com/ except settings.py, as the AUTH_PASSWORD_VALIDATORS exceed the character length and I could not reduce the size of them.
+
+This was done by copying the code from the python files and pasting into the pep8ci field.  I then address any errors in the python files.
+
+
+### Home page apps.py
+
+![home_apps](readme_images/testing/python/home_page_apps.py.png)
+
+
+### Home page urls.py
+
+![home_urls](readme_images/testing/python/home_page_urls.py.png)
+
+
+###  Home page views.py
+
+![home_views](readme_images/testing/python/home_page_views.py.png)
+
+
+###  Listings admin.py
+
+![listings_admin](readme_images/testing/python/listings_admin.py.png)
+
+
+### Listings apps.py
+
+![listings_apps](readme_images/testing/python/listings_apps.py.png)
+
+
+### Listings forms.py
+
+![listings_forms](readme_images/testing/python/listings_forms.py.png)
+
+
+### Listings models.py
+
+![listings_models](readme_images/testing/python/listings_models.py.png)
+
+
+### Listings urls.py
+
+![listings_urls](readme_images/testing/python/listings_urls.py.png)
+
+
+### Listings views.py
+
+![listings_views](readme_images/testing/python/listings_views.py.png)
+
+### manage.py
+
+![manage](readme_images/testing/python/manage.py.png)
+
+
+### Stompbox asgi.py
+
+![stompbox_asgi](readme_images/testing/python/stompbox_asgi.py.png)
+
+
+### Stompbox settings.py
+
+![stompbox_settings](readme_images/testing/python/stompbox_settings.py.png)
+
+
+### Stompbox urls.py
+
+![stompbox_urls](readme_images/testing/python/stompbox_urls.py.png)
+
+
+### Stompbox wsgi.py
+
+![stompbox_wsgi](readme_images/testing/python/stompbox_wsgi.py.png)
+
+
+### Users admin.py
+
+![users_admin](readme_images/testing/python/users_admin.py.png)
+
+
+### Users forms.py
+
+![users_forms](readme_images/testing/python/users_forms.py.png)
+
+
+### Users models.py
+
+![users_models](readme_images/testing/python/users_models.py.png)
+
+
+### Users urls.py
+
+![users_urls](readme_images/testing/python/users_urls.py.png)
+
+
+### Users views.py
+
+![users_views](readme_images/testing/python/users_views.py.png)
+
+
+## 6.2 Test Cases
+
+Here I manually tested all features and documented the outcomes.
+
+
+### Test Case 1 - User can browse and contact seller
+
+![tc1](readme_images/testing/test_cases/tc1_browse.png)
+
+
+### Test Case 2 - User sign up
+
+![tc2](readme_images/testing/test_cases/tc2_sign_up.png)
+
+
+### Test Case 3 - User log in and out
+
+![tc3](readme_images/testing/test_cases/tc3_log_in_out.png)
+
+
+### Test Case 4 - User update MyAccount
+
+![tc4](readme_images/testing/test_cases/tc4_update_myaccount.png)
+
+
+### Test Case 5 - User create listing
+
+![tc5](readme_images/testing/test_cases/tc5_create_listing.png)
+
+
+### Test Case 6 - User view listing
+
+![tc6](readme_images/testing/test_cases/tc6_view_listing.png)
+
+
+### Test Case 7 - User update listing
+
+![tc7](readme_images/testing/test_cases/tc7_update_listing.png)
+
+
+### Test Case 8 - User delete listing
+
+![tc8](readme_images/testing/test_cases/tc8_delete_listing.png)
+
+
+### Test Case 9 - User delete MyStompbox
+
+![tc9](readme_images/testing/test_cases/tc9_delete_mystompbox.png)
+
+
+### Test Case 10 - User navbar and footer navigation
+
+![tc10](readme_images/testing/test_cases/tc10_navbar_footer.png)
+
+
+## 6.3 Lighthouse
+
+I have tested for accessibility using Lighthouse within Chrome Dev Tools.  Here is a sample of those results.
+
+### Home page
+
+### Mobile
+
+![home_mobile](readme_images/testing/lighthouse/home_mobile.png)
+
+
+### Desktop
+
+![home_mobile](readme_images/testing/lighthouse/home_desktop.png)
+
+
+### Category
+
+### Mobile
+
+![category_mobile](readme_images/testing/lighthouse/category_mobile.png)
+
+### Desktop
+
+![category_desktop](readme_images/testing/lighthouse/category_desktop.png)
+
+
+### Listing detail
+
+### Mobile
+
+![listing_detail_mobile](readme_images/testing/lighthouse/listing_detail_mobile.png)
+
+### Desktop
+
+![listing_detail_desktop](readme_images/testing/lighthouse/listing_detail_desktop.png)
+
+
+## 6.4 Responsiveness
+
+I have tested responsiveness through the development process to ensure page layouts and content looks appropriate on each device size.  I tested this with Chrome Dev Tools and on my personal iPhone 14 and Lenovo Thinkpad.  Here are some samples.
+
+### Home page
+
+### Mobile
+
+![home_mobile](readme_images/testing/responsiveness/responsiveness_home_mobile.png)
+
+### Tablet
+
+![home_tablet](readme_images/testing/responsiveness/responsiveness_home_tablet.png)
+
+### Laptop
+
+![home_laptop](readme_images/testing/responsiveness/responsiveness_home_laptop.png)
+
+
+### Category
+
+### Mobile
+
+![category_mobile](readme_images/testing/responsiveness/responsiveness_category_mobile.png)
+
+### Tablet
+
+![category_tablet](readme_images/testing/responsiveness/responsiveness_category_tablet.png)
+
+### Laptop
+
+![category_laptop](readme_images/testing/responsiveness/responsiveness_category_laptop.png)
+
+
+### Pedal detail
+
+### Mobile
+
+![pedal_mobile](readme_images/testing/responsiveness/responsiveness_pedal_mobile.png)
+
+### Tablet
+
+![pedal_tablet](readme_images/testing/responsiveness/responsiveness_pedal_tablet.png)
+
+### Laptop
+
+![pedal_laptop](readme_images/testing/responsiveness/responsiveness_pedal_laptop.png)
+
+
+## 7. Bugs
+
+During development I encountered the following bugs:
+
+### Open
+
+
+[Burger menu icon disappearing](https://github.com/ShieldsJohn/Stompbox/issues/24)
+
+[Card title lengths exceeding card widths](https://github.com/ShieldsJohn/Stompbox/issues/40)
+
+### Closed
+
+[Social media links connecting to relevant site](https://github.com/ShieldsJohn/Stompbox/issues/26)
+
+[Exceeding character limit in Listing model](https://github.com/ShieldsJohn/Stompbox/issues/27)
+
+[URL tags not working after moving AllAuth templates](https://github.com/ShieldsJohn/Stompbox/issues/28)
+
+[User profiles not deleting](https://github.com/ShieldsJohn/Stompbox/issues/29)
+
+[Unable to migrate changes to Listings model](https://github.com/ShieldsJohn/Stompbox/issues/30)
+
+[Listings not linked to user](https://github.com/ShieldsJohn/Stompbox/issues/31)
+
+
