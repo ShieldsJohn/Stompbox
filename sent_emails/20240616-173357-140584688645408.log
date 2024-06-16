@@ -1,0 +1,24 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: [example.com] Password Reset Email
+From: Stompbox <noreply.yourstompbox.app@gmail.com>
+To: c1@hotmail.com
+Date: Sun, 16 Jun 2024 17:33:57 -0000
+Message-ID: <171855923761.14233.17066248804665158147@localhost>
+
+Hello from example.com!
+
+You are receiving this email because you or someone else has requested a
+password for your user account. However, we do not have any record of a user
+with email c1@hotmail.com in our database.
+
+This mail can be safely ignored if you did not request a password reset.
+
+If it was you, you can sign up for an account using the link below.
+
+http://8000-shieldsjohn-stompbox-zammr702b6o.ws.codeinstitute-ide.net/accounts/signup/
+
+Thank you for using example.com!
+example.com
+-------------------------------------------------------------------------------
