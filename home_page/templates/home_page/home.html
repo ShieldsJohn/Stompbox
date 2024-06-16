@@ -6,36 +6,36 @@
 <!--Header-->
 <!-- Hero -->
 <div class="home_page bg-dark">
-{% for message in messages %}
-<div class="alert alert-{{ message.tags }}">
-    {{ message }}
-</div>
-{% endfor %}
-<div class="image-container">
-    <div class="bg-image position-relative">
-        <img src="{% static 'images/pedals_landing.jpg' %}" alt="A selection of pedals" class="w-100">
-        <div class="mask position-absolute top-0 start-0 w-100" style="background-color: rgba(0, 0, 0, .5);"></div>
-        <div class="overlay-title">Stompbox</div>
-        <div class="overlay-tagline">find your tone</div>
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }}">
+        {{ message }}
     </div>
-</div>
-<p></p>
-<div class="container">
-    <div class="row">
-        {% for category in categories %}
-        <div class="col-md-3 d-flex">
-            <div class="card flex-fill">
-                <a href="{% url 'category_page' category_id=category.id %}">
-                    <div class="card-body">
-                        <h5 class="card-title"><strong>{{ category.title }}</strong></h5>
-                    </div>
-                </a>
-            </div>
-            <p></p>
+    {% endfor %}
+    <div class="image-container">
+        <div class="bg-image position-relative">
+            <img src="{% static 'images/pedals_landing.jpg' %}" alt="A selection of pedals" class="w-100">
+            <div class="mask position-absolute top-0 start-0 w-100" style="background-color: rgba(0, 0, 0, .5);"></div>
+            <div class="overlay-title">Stompbox</div>
+            <div class="overlay-tagline">find your tone</div>
         </div>
-        {% endfor %}
     </div>
-</div>
+    <p></p>
+    <div class="container">
+        <div class="row">
+            {% for category in categories %}
+            <div class="col-md-3 d-flex">
+                <div class="card flex-fill">
+                    <a href="{% url 'category_page' category_id=category.id %}">
+                        <div class="card-body">
+                            <h5 class="card-title"><strong>{{ category.title }}</strong></h5>
+                        </div>
+                    </a>
+                </div>
+                <p></p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 </div>
 <p></p>
 <script src="{% static 'javascript/animation.js' %}"></script>
