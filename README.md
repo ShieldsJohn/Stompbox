@@ -154,4 +154,102 @@ When clicking the contact link, I expect to be provided a form where I can type 
 When I submit my message, I would like confirmation that it has been submitted successfully and I should be returned to the home page to view categories again, should I wish to continue browsing.
 
 
+## 3. Design
+
+### 3.1 Wireframes
+
+After identifying the requirements of the website, my first design considerations were to plan how this would meet those requirements from a mobile-first perspective.  Here are some examples of the initial planning.
+
+### Home page
+
+![home page wireframe](readme_images/wireframes/wireframe_homepage.png)
+
+As is customary on a home page, I wanted to have a hero image which depicts the purpose of the website - in this case, an image of effects pedals.  This is overlaid with a title and tagline.
+
+The requirements of the user stories dictated that it must be intuitive and logical to browse.  Therefore I planned to have the user browser by category, which when selected takes the user to the category page in the next imamge.  Although not designed here, it was also intended to have login/sign up and footer on the home page.
+
+
+### Category page
+
+![category wireframe](readme_images/wireframes/wireframe_category.png)
+
+The category page should display images of the pedals for sale in the chosen category.  Minimal information on the pedal should be displayed to not clutter the page and to lead the user to the listing page for full listing information.
+
+
+### Listing page
+
+![listing wireframe](readme_images/wireframes/wireframe_listing.png)
+
+The listing page should show all the information provided by the seller on the pedal, along with images.  The plan was to utilise a carousel to scroll through the images on mobile devices, but I was unable to put this in place.
+
+There should also be functionality to contact the seller to ask questions or progress to a sale.
+
+
+### 3.2 Colour
+
+I wanted to keep colour choices simple with a predominantly tri-colour theme.  I wanted something modern and strikng.  When looking for inspiration, I came across the below.
+
+![colour_inspiration](readme_images/colours/colour_pallette_inspiration.png)
+
+So I decided to use a vibrant light green, set against the monochrome black and white.  However, I preferred Bootstrap's 'dark', which is a very dark grey, in place of the black.  These colour choices and others used are below.
+
+### Green
+
+![green](readme_images/colours/green_rgba_60_223_177_1.png)
+
+### White
+
+![white](readme_images/colours/white_rgb_255_255_255.png)
+
+### Whitesmoke
+
+![whitesmoke](readme_images/colours/whitesmoke_rgb_245_245_245.png)
+
+Only used on navbar links and home page title, as a variation to the white pages.
+
+
+### Bootstrap - Dark
+
+![dark](readme_images/colours/bg_dark_bootstrap.png)
+
+### Bootstrap - Red
+
+![red](readme_images/colours/danger_bootstrap.png)
+
+Only used on delete confirmation buttons for listings and user account.
+
+### 3.3 Fonts
+
+I used Open Sans from Google Fonts, as I feel this reflected the modern style I was aiming for.
+
+![open_sans](readme_images/google_fonts_open_sans.png)
+
+
+### 3.4 Database Schema
+
+![database schema](readme_images/erd/stompbox_erd.png)
+
+I have used the Allauth user model to take advantage of the user functionality it provides, in terms of registering username, email, password etc.  This has a one-to-one relationship with the custom profile model.
+
+I planned and created five additional models as shown above:
+
+### Profile model
+
+I created the profile model as an extension of the user model, to store and retrieve more user information such as full name, city and country.  This model has a one-to-many relationship as it is ForeignKey to the listing model and also has a one-to-one relationship with the Allauth user model. 
+
+### Listing model
+
+The listing model stores all the listing information and has a many-to-one relationship, receiving data from all other custom models.
+
+### Pedal model
+
+The pedal model stores pedal specific data, such as manufacturer and category which are foreign keys from those respective models.  The pedal name is also a ForeignKey to the listings model.
+
+### Manufacturer model
+
+This stores the manufacturer names and is a ForeignKey in the pedal model.
+
+### Category model
+
+This has a one-to-many relationship as many pedals and listings will use category data from this model.
 
