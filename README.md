@@ -740,45 +740,45 @@ I have tested responsiveness through the development process to ensure page layo
 
 ### Mobile
 
-![home_mobile](readme_images/testing/responsiveness/responsiveness_home_mobile.png)
+![home_mobile](readme_images/testing/responsive/responsive_home_mobile.png)
 
 ### Tablet
 
-![home_tablet](readme_images/testing/responsiveness/responsiveness_home_tablet.png)
+![home_tablet](readme_images/testing/responsive/responsive_home_tablet.png)
 
 ### Laptop
 
-![home_laptop](readme_images/testing/responsiveness/responsiveness_home_laptop.png)
+![home_laptop](readme_images/testing/responsive/responsive_home_laptop.png)
 
 
 ### Category
 
 ### Mobile
 
-![category_mobile](readme_images/testing/responsiveness/responsiveness_category_mobile.png)
+![category_mobile](readme_images/testing/responsive/responsive_category_mobile.png)
 
 ### Tablet
 
-![category_tablet](readme_images/testing/responsiveness/responsiveness_category_tablet.png)
+![category_tablet](readme_images/testing/responsive/responsive_category_tablet.png)
 
 ### Laptop
 
-![category_laptop](readme_images/testing/responsiveness/responsiveness_category_laptop.png)
+![category_laptop](readme_images/testing/responsive/responsive_category_laptop.png)
 
 
 ### Pedal detail
 
 ### Mobile
 
-![pedal_mobile](readme_images/testing/responsiveness/responsiveness_pedal_mobile.png)
+![pedal_mobile](readme_images/testing/responsive/responsive_pedal_mobile.png)
 
 ### Tablet
 
-![pedal_tablet](readme_images/testing/responsiveness/responsiveness_pedal_tablet.png)
+![pedal_tablet](readme_images/testing/responsive/responsive_pedal_tablet.png)
 
 ### Laptop
 
-![pedal_laptop](readme_images/testing/responsiveness/responsiveness_pedal_laptop.png)
+![pedal_laptop](readme_images/testing/responsive/responsive_pedal_laptop.png)
 
 
 ## 7. Bugs
@@ -807,3 +807,43 @@ During development I encountered the following bugs:
 [Listings not linked to user](https://github.com/ShieldsJohn/Stompbox/issues/31)
 
 
+## 8. Languages, Frameworks and other Technologies
+
+- HTML
+- CSS
+- Bootstrap
+- Python
+- JavaScript
+- Django
+- Django Allauth
+- Code Institute PostgreSQL database
+- Code Institute GitPod template
+- Cloudinary
+- Google Fonts
+- Fontawesome
+- GitHub
+- GitPod
+- Heroku
+- Google Chrome Dev Tools
+- W3C HTML Validator
+- W3C CSS Validator
+- JSHint
+- Code Institue Python Linter
+- eBay
+- Slack
+
+## 9. Deployment
+
+Before deploying on Heroku, I created a requirements.txt file. This lists all the dependencies the application needs to run.  To create the list of requirements, I used the command: pip3 freeze > requirements.txt
+
+This updated the requirements.txt file with the current dependencies which were then committed and pushed to GitHub.  However, before doing so, I ensured any sensitive information such as secret keys were stored in env.py, which is then included in the .gitignore file, so as not to be readily availble for anyone to see on GitHub.
+
+With all this in place, I then carried out the following steps to deploy on Heroku.
+
+- Create an account on Heroku
+- Create a new app by clicking on the 'Create App' button
+- Choose a unique name for the app, select my region, and click 'Create App'
+- On the 'Settings' tab, scroll down to 'Config Vars'.  Here, I added any sensitive information such as credentials. 
+- Further down the page, select 'Buildpacks' to install additional dependencies not included in requirements.txt. In this case, I installed the Python buildpack.
+- On the the 'Deploy' tab, choose 'GitHub' as the deployment method. Here, I connected my GitHub account and repository.
+- Click 'Deploy' and wait for the app to be built and deployed.
