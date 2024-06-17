@@ -847,3 +847,28 @@ With all this in place, I then carried out the following steps to deploy on Hero
 - Further down the page, select 'Buildpacks' to install additional dependencies not included in requirements.txt. In this case, I installed the Python buildpack.
 - On the the 'Deploy' tab, choose 'GitHub' as the deployment method. Here, I connected my GitHub account and repository.
 - Click 'Deploy' and wait for the app to be built and deployed.
+
+## 10. Credits
+
+### 10.1 Images
+
+- The hero image was found at [unsplash](https://unsplash.com/photos/black-and-white-audio-mixer-pw8i1n7Jt20)
+- All listing images were taken from [eBay](https://www.ebay.co.uk/) - for educational purposes only.
+
+## 10.2 Code
+
+The foundations of my understanding for this project were built from Code Institute's 'I think, therefore I blog' project.  I supplemented this with:
+
+- [Django documentation](https://docs.djangoproject.com)
+- [Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
+- [Codemy Django e-commerce](https://www.youtube.com/watch?v=u6R4vBa7ZK4&list=PLCC34OHNcOtpRfBYk-8y0GMO4i1p1zn50)
+- [Alert messages](https://www.youtube.com/watch?v=R8oyrL99nrE&t=518s)
+- [Format price input](https://webdesign.tutsplus.com/auto-formatting-input-value--cms-26745t)
+- [Cards JS animation](https://www.w3schools.com/jsref/event_onmouseover.asp#:~:text=Description,similar%20to%20the%20onmouseenter%20event)
+- [Cards title resize](https://stackoverflow.com/questions/18229230/dynamically-change-the-size-of-the-font-size-based-on-text-length)
+- [JS number format](https://stackoverflow.com/questions/46554765/format-javascript-input-numbers-as-float-with-two-decimal-places-and-enforce-on)
+- [JS check invalid characters](https://stackoverflow.com/questions/15699094/how-to-validate-a-number-field-in-javascript-using-regular-expressions)
+- Tomas Kubancik, PP4 Lead at Code Institute was also a massive help in understanding where I was going wrong at times.  I particularly got stuck on associating User and Profile models, which he ultimately provided some code for within my Profile model.
+- I also used Code Institute's Slack app, for looking up past examples of issues I was having and my fellow students were also great in helping where they could.
+- My mentor Jack Wachira was also helpful in aiding my understanding.
+
